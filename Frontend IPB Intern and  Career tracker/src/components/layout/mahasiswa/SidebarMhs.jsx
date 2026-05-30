@@ -14,9 +14,14 @@ import {
   ChevronUp,
   ChevronDown,
   Settings,
+  PanelLeftOpen,
+  PanelLeftClose,
 } from "lucide-react";
 
-const SidebarMhs = () => {
+const SidebarMhs = ({
+  isCollapsed,
+  setIsCollapsed,
+}) => {
 
   const navigate = useNavigate();
 
@@ -111,37 +116,76 @@ const SidebarMhs = () => {
   return (
 
     <aside
-      className="
+      className={`
         fixed
         top-0
         left-0
-        w-64
         min-h-screen
         bg-indigo-900
         text-white
         flex
         flex-col
-      "
+        transition-all
+        duration-300
+
+        ${
+          isCollapsed
+            ? "w-20"
+            : "w-64"
+        }
+      `}
     >
 
-      {/* LOGO */}
+      {/* HEADER */}
       <div
         className="
-          p-6
           border-b
           border-indigo-500
         "
       >
 
-        <h1 className="text-2xl font-bold">
-          ICON
-        </h1>
+        {/* HAMBURGER */}
+        <div className="flex justify-end p-4">
 
-        <p className="text-sm text-yellow-300">
-          IPB Career Opportunity Network
-        </p>
+          <button
+            onClick={() =>
+              setIsCollapsed(!isCollapsed)
+            }
+
+            className="
+              cursor-pointer
+              hover:text-kuning-tua
+            "
+          >
+            {
+              isCollapsed
+                ? <PanelLeftOpen size={22} />
+                : <PanelLeftClose size={22} />
+            }
+          </button>
+
+        </div>
+
+        {/* LOGO */}
+        {!isCollapsed && (
+
+          <div className="px-6 pb-4">
+
+            <h1 className="text-2xl font-bold">
+              ICON
+            </h1>
+
+            <p className="text-sm text-yellow-300">
+              IPB Career Opportunity Network
+            </p>
+
+          </div>
+
+        )}
 
       </div>
+
+
 
       {/* NAVIGATION */}
       <nav className="flex-1 p-4 space-y-2">
@@ -166,12 +210,17 @@ const SidebarMhs = () => {
               onClick={() =>
                 navigate(item.path)
               }
-
               className={`
                 text-md
                 flex
                 items-center
-                gap-3
+
+                ${
+                  isCollapsed
+                    ? "justify-center"
+                    : "gap-3"
+                }
+
                 w-full
                 px-4
                 py-3
@@ -181,12 +230,10 @@ const SidebarMhs = () => {
 
                 ${
                   isActive
-
                     ? `
                       bg-indigo-950
                       text-kuning-tua
                     `
-
                     : `
                       text-white
                       hover:bg-indigo-700
@@ -205,9 +252,13 @@ const SidebarMhs = () => {
                 }
               />
 
-              <span>
-                {item.label}
-              </span>
+              {!isCollapsed && (
+
+                <span>
+                  {item.label}
+                </span>
+
+              )}
 
             </button>
           );
@@ -216,15 +267,27 @@ const SidebarMhs = () => {
         {/* DROPDOWN */}
         <div>
 
-          <button
-            onClick={() =>
-              setIsOpen(!isOpen)
+        <button
+          onClick={() => {
+
+            if (isCollapsed) {
+              setIsCollapsed(false);
+              return;
             }
 
-            className="
+            setIsOpen(!isOpen);
+          }}
+
+            className={`
               flex
               items-center
-              justify-between
+
+              ${
+                isCollapsed
+                  ? "justify-center"
+                  : "justify-between"
+              }
+
               w-full
               px-4
               py-3
@@ -232,7 +295,7 @@ const SidebarMhs = () => {
               hover:bg-indigo-700
               transition
               cursor-pointer
-            "
+            `}
           >
 
             <div
@@ -246,21 +309,28 @@ const SidebarMhs = () => {
 
               <ChartNoAxesColumn size={18} />
 
-              <span>
-                Aktivitas
-              </span>
+              {!isCollapsed && (
+
+                <span>
+                  Aktivitas
+                </span>
+
+              )}
 
             </div>
 
-            {isOpen
-              ? <ChevronUp />
-              : <ChevronDown />
-            }
+            {!isCollapsed && (
+
+              isOpen
+                ? <ChevronUp />
+                : <ChevronDown />
+
+            )}
 
           </button>
 
           {/* SUBMENU */}
-          {isOpen && (
+          {isOpen && !isCollapsed && (
 
             <div
               className="
@@ -337,25 +407,33 @@ const SidebarMhs = () => {
       >
 
         <button
-          className="
+          className={`
             text-md
             flex
             items-center
-            gap-3
+
+            ${
+              isCollapsed
+                ? "justify-center"
+                : "gap-3"
+            }
+
             px-4
             py-3
             rounded-lg
             hover:bg-indigo-700
             w-full
             cursor-pointer
-          "
+          `}
         >
 
           <Settings size={20} />
 
-          <span>
-            Pengaturan
-          </span>
+          {!isCollapsed && (
+            <span>
+              Pengaturan
+            </span>
+          )}
 
         </button>
 

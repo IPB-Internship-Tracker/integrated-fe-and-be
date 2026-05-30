@@ -1,16 +1,37 @@
 import SidebarMhs from "./SidebarMhs";
 import TopbarMhs from "./TopbarMhs";
 import { Outlet } from "react-router-dom";
+import { useState } from "react";
 
 const DashboardLayoutMhs = () => {
+
+  const [isCollapsed, setIsCollapsed] =
+    useState(false);
   return (
     <div className="min-h-screen">
 
       {/* SIDEBAR */}
-      <SidebarMhs />
+      <SidebarMhs
+        isCollapsed={isCollapsed}
+        setIsCollapsed={setIsCollapsed}
+      />
 
       {/* RIGHT SIDE */}
-      <div className="ml-64 flex flex-col min-h-screen">
+      <div
+          className={`
+            flex
+            flex-col
+            min-h-screen
+            transition-all
+            duration-300
+
+            ${
+              isCollapsed
+                ? "ml-20"
+                : "ml-64"
+            }
+          `}
+        >
 
         {/* TOPBAR */}
         <TopbarMhs />
