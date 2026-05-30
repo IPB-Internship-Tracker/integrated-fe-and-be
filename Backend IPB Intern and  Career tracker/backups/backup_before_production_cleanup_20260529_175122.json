@@ -1,0 +1,837 @@
+{
+  "created_at": "2026-05-29T17:51:22.869691",
+  "purpose": "backup_before_production_cleanup",
+  "database": "application database from app.database.engine",
+  "tables": {
+    "kegiatan_draft": [],
+    "kegiatan_mbkm": [
+      {
+        "mbkm_id": 17,
+        "mitra_id": 17,
+        "nama_kegiatan": "Magang Data Analyst Pertanian",
+        "deskripsi": "Program magang untuk analisis data komoditas pertanian, dashboard operasional, dan laporan insight bisnis.",
+        "kategori_mbkm": "MAGANG",
+        "deadline_pendaftaran": "2026-06-20",
+        "kuota": 4,
+        "tanggal_mulai": "2026-07-01",
+        "tanggal_selesai": "2026-09-30",
+        "syarat_ketentuan": "Mahasiswa aktif, mampu menggunakan spreadsheet, dan tertarik pada analisis data.",
+        "narahubung": "081298765432",
+        "info_lebih_lanjut": "https://agronusa.example.com/magang-data-analyst",
+        "status": "Registrasi Dibuka"
+      },
+      {
+        "mbkm_id": 19,
+        "mitra_id": 17,
+        "nama_kegiatan": "Magang Business Intelligence Agribisnis",
+        "deskripsi": "Program magang untuk mengolah data produksi dan distribusi komoditas pertanian.",
+        "kategori_mbkm": "MAGANG",
+        "deadline_pendaftaran": "2026-06-20",
+        "kuota": 3,
+        "tanggal_mulai": "2026-07-01",
+        "tanggal_selesai": "2026-09-30",
+        "syarat_ketentuan": "Mahasiswa aktif, mampu menggunakan spreadsheet, dan tertarik pada analisis data.",
+        "narahubung": "081298765432",
+        "info_lebih_lanjut": "https://agronusa.example.com/magang-data-analyst",
+        "status": "Registrasi Dibuka"
+      },
+      {
+        "mbkm_id": 20,
+        "mitra_id": 18,
+        "nama_kegiatan": "Magang Data Analyst Pertanian",
+        "deskripsi": "Mengolah data produksi pertanian dan membuat ringkasan insight untuk tim operasional.",
+        "kategori_mbkm": "MAGANG",
+        "deadline_pendaftaran": "2026-06-20",
+        "kuota": 5,
+        "tanggal_mulai": "2026-07-01",
+        "tanggal_selesai": "2026-09-30",
+        "syarat_ketentuan": "Mahasiswa aktif, melampirkan CV, dan bersedia mengikuti proses seleksi mitra.",
+        "narahubung": "081298765432",
+        "info_lebih_lanjut": "https://agronusa.example.com/karier",
+        "status": "Registrasi Dibuka"
+      },
+      {
+        "mbkm_id": 21,
+        "mitra_id": 18,
+        "nama_kegiatan": "Magang UI/UX Research Agritech",
+        "deskripsi": "Melakukan riset pengguna aplikasi agritech dan menyusun rekomendasi perbaikan pengalaman pengguna.",
+        "kategori_mbkm": "MAGANG",
+        "deadline_pendaftaran": "2026-06-20",
+        "kuota": 4,
+        "tanggal_mulai": "2026-07-01",
+        "tanggal_selesai": "2026-09-30",
+        "syarat_ketentuan": "Mahasiswa aktif, melampirkan CV, dan bersedia mengikuti proses seleksi mitra.",
+        "narahubung": "081298765432",
+        "info_lebih_lanjut": "https://agronusa.example.com/karier",
+        "status": "Registrasi Dibuka"
+      },
+      {
+        "mbkm_id": 22,
+        "mitra_id": 18,
+        "nama_kegiatan": "Magang Frontend Developer Agritech",
+        "deskripsi": "Membangun antarmuka dashboard agritech dan mengintegrasikan data operasional untuk tim bisnis.",
+        "kategori_mbkm": "MAGANG",
+        "deadline_pendaftaran": "2026-06-20",
+        "kuota": 3,
+        "tanggal_mulai": "2026-07-01",
+        "tanggal_selesai": "2026-09-30",
+        "syarat_ketentuan": "Mahasiswa aktif, melampirkan CV, dan bersedia mengikuti proses seleksi mitra.",
+        "narahubung": "081298765432",
+        "info_lebih_lanjut": "https://agronusa.example.com/karier",
+        "status": "Registrasi Dibuka"
+      },
+      {
+        "mbkm_id": 23,
+        "mitra_id": 19,
+        "nama_kegiatan": "Studi Independen Talenta Digital Dicoding",
+        "deskripsi": "Program studi independen berbasis pembelajaran teknologi untuk membangun karier sebagai talenta digital. Materi dirancang mengikuti kebutuhan industri, fleksibel, dan mendukung peserta belajar mandiri dengan kurikulum yang relevan.\n\nLink informasi: https://www.dicoding.com/",
+        "kategori_mbkm": "STUDI_INDEPENDEN",
+        "deadline_pendaftaran": "2026-06-30",
+        "kuota": 1,
+        "tanggal_mulai": "2026-07-15",
+        "tanggal_selesai": "2026-10-15",
+        "syarat_ketentuan": "",
+        "narahubung": "",
+        "info_lebih_lanjut": "",
+        "status": "Registrasi Dibuka"
+      },
+      {
+        "mbkm_id": 24,
+        "mitra_id": 20,
+        "nama_kegiatan": "ISINDO UI/UX Champions",
+        "deskripsi": "Kompetisi UI/UX bertema Eco-Friendly Lifestyle Platform untuk peserta yang ingin mengasah kreativitas, design thinking, dan kemampuan membuat prototype. Peserta ditantang menunjukkan inovasi terbaik dalam merancang platform gaya hidup ramah lingkungan.\n\nLink informasi: https://infolomba.id/info-isindo-uiux-champions-193",
+        "kategori_mbkm": "LOMBA",
+        "deadline_pendaftaran": "2026-07-10",
+        "kuota": 1,
+        "tanggal_mulai": "2026-07-20",
+        "tanggal_selesai": "2026-08-20",
+        "syarat_ketentuan": "",
+        "narahubung": "",
+        "info_lebih_lanjut": "",
+        "status": "Registrasi Dibuka"
+      },
+      {
+        "mbkm_id": 33,
+        "mitra_id": 26,
+        "nama_kegiatan": "Magang Quality Assurance Agritech",
+        "deskripsi": "Program magang untuk belajar quality assurance produk agritech.",
+        "kategori_mbkm": "MAGANG",
+        "deadline_pendaftaran": "2030-06-01",
+        "kuota": 3,
+        "tanggal_mulai": "2030-07-01",
+        "tanggal_selesai": "2030-09-30",
+        "syarat_ketentuan": "Mahasiswa aktif dan bersedia mengikuti program.",
+        "narahubung": "081234567890",
+        "info_lebih_lanjut": "https://agrodigitalmandiri.co.id",
+        "status": "Registrasi Dibuka"
+      },
+      {
+        "mbkm_id": 34,
+        "mitra_id": 27,
+        "nama_kegiatan": "Magang Data Engineer Agritech",
+        "deskripsi": "Program magang data engineer untuk membangun pipeline data pertanian.",
+        "kategori_mbkm": "MAGANG",
+        "deadline_pendaftaran": "2030-06-01",
+        "kuota": 4,
+        "tanggal_mulai": "2030-07-01",
+        "tanggal_selesai": "2030-09-30",
+        "syarat_ketentuan": "Mahasiswa aktif dan bersedia mengikuti program.",
+        "narahubung": "081234567890",
+        "info_lebih_lanjut": "https://binatalenta.co.id/karier",
+        "status": "Registrasi Dibuka"
+      },
+      {
+        "mbkm_id": 37,
+        "mitra_id": 27,
+        "nama_kegiatan": "Kompetisi UI/UX Inovasi Pangan",
+        "deskripsi": "Kompetisi desain UI UX untuk solusi pangan berkelanjutan.",
+        "kategori_mbkm": "LOMBA",
+        "deadline_pendaftaran": "2030-06-10",
+        "kuota": 1,
+        "tanggal_mulai": "2030-07-10",
+        "tanggal_selesai": "2030-07-12",
+        "syarat_ketentuan": "",
+        "narahubung": "",
+        "info_lebih_lanjut": "",
+        "status": "Registrasi Dibuka"
+      }
+    ],
+    "lamaran": [
+      {
+        "lamaran_id": 11,
+        "mahasiswa_id": 19,
+        "mbkm_id": 17,
+        "tanggal_daftar": "2026-05-26",
+        "status_pendaftaran": "TELAH_MENDAFTAR",
+        "berkas_pendaftaran": {
+          "Portofolio": "/uploads/lamaran/mahasiswa-19/kegiatan-17/df2cbc45664e4e479e3c1c93faea0bc3.png",
+          "Curriculum Vitae (CV)": "/uploads/lamaran/mahasiswa-19/kegiatan-17/3be35f13660d42cd9e0df805309baf5f.png"
+        }
+      },
+      {
+        "lamaran_id": 12,
+        "mahasiswa_id": 20,
+        "mbkm_id": 17,
+        "tanggal_daftar": "2026-05-26",
+        "status_pendaftaran": "DITOLAK",
+        "berkas_pendaftaran": {
+          "Portofolio": "/uploads/lamaran/mahasiswa-20/kegiatan-17/983a512520c4474a9819207c94162d4f.png",
+          "Curriculum Vitae (CV)": "/uploads/lamaran/mahasiswa-20/kegiatan-17/e700fb9758624ea99cc20a679ae8cb99.png"
+        }
+      },
+      {
+        "lamaran_id": 13,
+        "mahasiswa_id": 21,
+        "mbkm_id": 17,
+        "tanggal_daftar": "2026-05-26",
+        "status_pendaftaran": "DITERIMA",
+        "berkas_pendaftaran": {
+          "Portofolio": "/uploads/lamaran/mahasiswa-21/kegiatan-17/ae38fed5e376459986d73d8edf9559ea.png",
+          "Curriculum Vitae (CV)": "/uploads/lamaran/mahasiswa-21/kegiatan-17/b9455ac6b1fc4daf81d2a8bb42a29540.png"
+        }
+      },
+      {
+        "lamaran_id": 14,
+        "mahasiswa_id": 22,
+        "mbkm_id": 20,
+        "tanggal_daftar": "2026-05-26",
+        "status_pendaftaran": "TELAH_MENDAFTAR",
+        "berkas_pendaftaran": {
+          "Portofolio": "/uploads/lamaran/mahasiswa-22/kegiatan-20/40dc0a3780ac4964b7dd9cd6cde73794.png",
+          "Curriculum Vitae (CV)": "/uploads/lamaran/mahasiswa-22/kegiatan-20/829759dbc8484b3eb096704038c8f8ac.png"
+        }
+      },
+      {
+        "lamaran_id": 15,
+        "mahasiswa_id": 22,
+        "mbkm_id": 21,
+        "tanggal_daftar": "2026-05-26",
+        "status_pendaftaran": "DITOLAK",
+        "berkas_pendaftaran": {
+          "Portofolio": "/uploads/lamaran/mahasiswa-22/kegiatan-21/c8cb4352fd2745deb3dc6be53bd439a2.png",
+          "Curriculum Vitae (CV)": "/uploads/lamaran/mahasiswa-22/kegiatan-21/e087ab30fcb14582a25f06fe6ceb0ea5.png"
+        }
+      },
+      {
+        "lamaran_id": 16,
+        "mahasiswa_id": 22,
+        "mbkm_id": 22,
+        "tanggal_daftar": "2026-05-26",
+        "status_pendaftaran": "DITERIMA",
+        "berkas_pendaftaran": {
+          "Portofolio": "/uploads/lamaran/mahasiswa-22/kegiatan-22/a41f8ec681794a768fd5370ace3d140e.png",
+          "Curriculum Vitae (CV)": "/uploads/lamaran/mahasiswa-22/kegiatan-22/86933e9087cc4ca5870cc151df48a7c0.png"
+        }
+      },
+      {
+        "lamaran_id": 17,
+        "mahasiswa_id": 22,
+        "mbkm_id": 19,
+        "tanggal_daftar": "2026-05-26",
+        "status_pendaftaran": "TELAH_MENDAFTAR",
+        "berkas_pendaftaran": {
+          "Curriculum Vitae (CV)": "/uploads/lamaran/mahasiswa-22/kegiatan-19/7123039a96f94618a71806ef82714edd.pdf",
+          "Portofolio": "/uploads/lamaran/mahasiswa-22/kegiatan-19/304cbc687e4e472682536413247372c9.pdf"
+        }
+      },
+      {
+        "lamaran_id": 19,
+        "mahasiswa_id": 28,
+        "mbkm_id": 33,
+        "tanggal_daftar": "2026-05-27",
+        "status_pendaftaran": "TELAH_MENDAFTAR",
+        "berkas_pendaftaran": {
+          "Curriculum Vitae (CV)": "/uploads/test/cv.pdf"
+        }
+      },
+      {
+        "lamaran_id": 20,
+        "mahasiswa_id": 29,
+        "mbkm_id": 34,
+        "tanggal_daftar": "2026-05-27",
+        "status_pendaftaran": "DITERIMA",
+        "berkas_pendaftaran": {
+          "Curriculum Vitae (CV)": "/uploads/lamaran/mahasiswa-29/kegiatan-34/9f8d812a0be247cd80e304597a87bd8e.pdf",
+          "Portofolio": "/uploads/lamaran/mahasiswa-29/kegiatan-34/a94d984537fa44958dd9542c2fdfdea9.pdf"
+        }
+      }
+    ],
+    "logbook": [
+      {
+        "logbook_id": 5,
+        "lamaran_id": 13,
+        "foto": "/uploads/logbook/mahasiswa-21/lamaran-13/aaf35741d5be43839869f0cb3119ccff.png",
+        "aktivitas": "Menganalisis data panen, membersihkan dataset, dan memperbarui dashboard mingguan",
+        "durasi": 210,
+        "tanggal": "2026-07-09"
+      },
+      {
+        "logbook_id": 7,
+        "lamaran_id": 16,
+        "foto": "/uploads/logbook/mahasiswa-22/lamaran-16/02838dc8bdcc4e8bb59f805bb4d7230b.png",
+        "aktivitas": "Membuat komponen dashboard, menguji integrasi data frontend, dan mencatat hasil validasi",
+        "durasi": 210,
+        "tanggal": "2026-07-09"
+      },
+      {
+        "logbook_id": 8,
+        "lamaran_id": 16,
+        "foto": "/uploads/logbook/mahasiswa-22/lamaran-16/e0075391b5344d84bbc8cb6dfc2982a7.png",
+        "aktivitas": "waladfmsdlkf",
+        "durasi": 120,
+        "tanggal": "2026-05-26"
+      },
+      {
+        "logbook_id": 9,
+        "lamaran_id": 16,
+        "foto": "/uploads/logbook/mahasiswa-22/lamaran-16/18c60304e716497f98320f9580e9c069.png",
+        "aktivitas": "{\"teks\":\"slkdlksdf\",\"media\":\"Online\",\"lokasi\":\"rumah\",\"waktuMulai\":\"21:55\",\"waktuSelesai\":\"23:55\"}",
+        "durasi": 120,
+        "tanggal": "2026-05-26"
+      }
+    ],
+    "lomba": [
+      {
+        "mbkm_id": 24,
+        "bidang": "UI/UX Design",
+        "poster": "/uploads/logbook/mahasiswa-18/lamaran-9/Screenshot 2026-05-20 213924.png",
+        "logo_url": null
+      },
+      {
+        "mbkm_id": 37,
+        "bidang": "Desain Produk",
+        "poster": "https://binatalenta.co.id/poster-uiux.png",
+        "logo_url": null
+      }
+    ],
+    "magang": [
+      {
+        "mbkm_id": 17,
+        "bidang": "DATA_ANALYTICS",
+        "posisi": "Data Analyst Intern",
+        "lokasi": null,
+        "uang_saku": null,
+        "nama_perusahaan": "PT Agro Teknologi Nusantara",
+        "logo_url": "/uploads/logbook/mahasiswa-18/lamaran-9/Screenshot 2026-05-20 213924.png",
+        "penempatan": "HYBRID",
+        "kota_lokasi": "Bogor",
+        "alamat_lengkap": "Jl. Raya Pajajaran No. 17, Bogor",
+        "tipe_gaji": "PAID",
+        "gaji_perbulan": 1800000.0,
+        "dokumen_dibutuhkan": [
+          "Curriculum Vitae (CV)",
+          "Portofolio"
+        ]
+      },
+      {
+        "mbkm_id": 19,
+        "bidang": "DATA_ANALYTICS",
+        "posisi": "Data Analyst Intern",
+        "lokasi": null,
+        "uang_saku": null,
+        "nama_perusahaan": "PT Agro Teknologi Nusantara",
+        "logo_url": "/uploads/logbook/mahasiswa-18/lamaran-9/Screenshot 2026-05-20 213924.png",
+        "penempatan": "HYBRID",
+        "kota_lokasi": "Bogor",
+        "alamat_lengkap": "Jl. Raya Pajajaran No. 17, Bogor",
+        "tipe_gaji": "PAID",
+        "gaji_perbulan": 1800000.0,
+        "dokumen_dibutuhkan": [
+          "Curriculum Vitae (CV)",
+          "Portofolio"
+        ]
+      },
+      {
+        "mbkm_id": 20,
+        "bidang": "DATA_ANALYTICS",
+        "posisi": "Data Analyst Intern",
+        "lokasi": null,
+        "uang_saku": null,
+        "nama_perusahaan": "PT Agro Teknologi Nusantara",
+        "logo_url": "/uploads/logbook/mahasiswa-18/lamaran-9/Screenshot 2026-05-20 213924.png",
+        "penempatan": "HYBRID",
+        "kota_lokasi": "Bogor",
+        "alamat_lengkap": "Jl. Raya Pajajaran No. 17, Bogor",
+        "tipe_gaji": "PAID",
+        "gaji_perbulan": 1800000.0,
+        "dokumen_dibutuhkan": [
+          "Curriculum Vitae (CV)",
+          "Portofolio"
+        ]
+      },
+      {
+        "mbkm_id": 21,
+        "bidang": "DESIGN_CREATIVE",
+        "posisi": "UX Research Intern",
+        "lokasi": null,
+        "uang_saku": null,
+        "nama_perusahaan": "PT Agro Teknologi Nusantara",
+        "logo_url": "/uploads/logbook/mahasiswa-18/lamaran-9/Screenshot 2026-05-20 213924.png",
+        "penempatan": "HYBRID",
+        "kota_lokasi": "Bogor",
+        "alamat_lengkap": "Jl. Raya Pajajaran No. 17, Bogor",
+        "tipe_gaji": "PAID",
+        "gaji_perbulan": 1800000.0,
+        "dokumen_dibutuhkan": [
+          "Curriculum Vitae (CV)",
+          "Portofolio"
+        ]
+      },
+      {
+        "mbkm_id": 22,
+        "bidang": "INFORMATION_TECHNOLOGY",
+        "posisi": "Frontend Developer Intern",
+        "lokasi": null,
+        "uang_saku": null,
+        "nama_perusahaan": "PT Agro Teknologi Nusantara",
+        "logo_url": "/uploads/logbook/mahasiswa-18/lamaran-9/Screenshot 2026-05-20 213924.png",
+        "penempatan": "HYBRID",
+        "kota_lokasi": "Bogor",
+        "alamat_lengkap": "Jl. Raya Pajajaran No. 17, Bogor",
+        "tipe_gaji": "PAID",
+        "gaji_perbulan": 1800000.0,
+        "dokumen_dibutuhkan": [
+          "Curriculum Vitae (CV)",
+          "Portofolio"
+        ]
+      },
+      {
+        "mbkm_id": 33,
+        "bidang": "INFORMATION_TECHNOLOGY",
+        "posisi": "Quality Assurance Intern",
+        "lokasi": null,
+        "uang_saku": null,
+        "nama_perusahaan": "PT Agro Digital Mandiri",
+        "logo_url": null,
+        "penempatan": "HYBRID",
+        "kota_lokasi": "Bogor",
+        "alamat_lengkap": "Jl. Pajajaran No. 21, Bogor",
+        "tipe_gaji": "PAID",
+        "gaji_perbulan": 1000000.0,
+        "dokumen_dibutuhkan": [
+          "Curriculum Vitae (CV)"
+        ]
+      },
+      {
+        "mbkm_id": 34,
+        "bidang": "INFORMATION_TECHNOLOGY",
+        "posisi": "Data Engineer Intern",
+        "lokasi": null,
+        "uang_saku": null,
+        "nama_perusahaan": "PT Bina Talenta Nusantara",
+        "logo_url": null,
+        "penempatan": "HYBRID",
+        "kota_lokasi": "Bogor",
+        "alamat_lengkap": "Jl. Meranti No. 18, Bogor",
+        "tipe_gaji": "PAID",
+        "gaji_perbulan": 1500000.0,
+        "dokumen_dibutuhkan": [
+          "Curriculum Vitae (CV)",
+          "Portofolio"
+        ]
+      }
+    ],
+    "mahasiswa": [
+      {
+        "mahasiswa_id": 14,
+        "user_id": 24,
+        "nama": "Aulia Rahmasyifa Az zahra",
+        "nim": "G6401231033",
+        "fakultas": "Sekolah Sains Data, Matematika, dan Informatika",
+        "program_studi": "Ilmu Komputer",
+        "semester": 7,
+        "foto_profile": "/uploads/profile/mahasiswa-14/6041ae7e8ede494ea1c08fcdd2e61875.jpeg"
+      },
+      {
+        "mahasiswa_id": 19,
+        "user_id": 36,
+        "nama": "Andika Pratama",
+        "nim": "G0526180042",
+        "fakultas": "Fakultas Matematika dan Ilmu Pengetahuan Alam",
+        "program_studi": "Ilmu Komputer",
+        "semester": 6,
+        "foto_profile": null
+      },
+      {
+        "mahasiswa_id": 20,
+        "user_id": 37,
+        "nama": "Siti Rahmawati",
+        "nim": "H0526180042",
+        "fakultas": "Fakultas Matematika dan Ilmu Pengetahuan Alam",
+        "program_studi": "Ilmu Komputer",
+        "semester": 6,
+        "foto_profile": null
+      },
+      {
+        "mahasiswa_id": 21,
+        "user_id": 38,
+        "nama": "Bima Santoso",
+        "nim": "J0526180042",
+        "fakultas": "Fakultas Matematika dan Ilmu Pengetahuan Alam",
+        "program_studi": "Ilmu Komputer",
+        "semester": 6,
+        "foto_profile": null
+      },
+      {
+        "mahasiswa_id": 22,
+        "user_id": 40,
+        "nama": "Auliaa",
+        "nim": "K0526180614",
+        "fakultas": "Fakultas Matematika dan Ilmu Pengetahuan Alam",
+        "program_studi": "Ilmu Komputer",
+        "semester": 6,
+        "foto_profile": "/uploads/profile/mahasiswa-22/5d0048f48aed48ab9afc2d8580efdbc1.jpeg"
+      },
+      {
+        "mahasiswa_id": 27,
+        "user_id": 51,
+        "nama": "Raka Putra Pratama",
+        "nim": "G6427155419",
+        "fakultas": "FMIPA",
+        "program_studi": "Ilmu Komputer",
+        "semester": 6,
+        "foto_profile": "/uploads/profile/mahasiswa-27/da196a736b4745e8a21408b264860719.png"
+      },
+      {
+        "mahasiswa_id": 28,
+        "user_id": 54,
+        "nama": "Alya Nabila Putri",
+        "nim": "G6427160457",
+        "fakultas": "FMIPA",
+        "program_studi": "Ilmu Komputer",
+        "semester": 6,
+        "foto_profile": null
+      },
+      {
+        "mahasiswa_id": 29,
+        "user_id": 56,
+        "nama": "Naila Aurelia Putri",
+        "nim": "G6427160953",
+        "fakultas": "FMIPA",
+        "program_studi": "Ilmu Komputer",
+        "semester": 7,
+        "foto_profile": "/uploads/profile/mahasiswa-29/07d99c12b13548d7afa6372ad9daf919.png"
+      },
+      {
+        "mahasiswa_id": 31,
+        "user_id": 59,
+        "nama": "Aulia Rahma",
+        "nim": "G6401231032",
+        "fakultas": "Sekolah Sains Data, Matematika, dan Informatika",
+        "program_studi": "Ilmu Komputer",
+        "semester": 1,
+        "foto_profile": null
+      }
+    ],
+    "mitra": [
+      {
+        "mitra_id": 11,
+        "user_id": 25,
+        "nama_instansi": "Shopee",
+        "jenis_instansi": "Instansi Swasta",
+        "alamat": "bogor",
+        "kontak": "0873794044",
+        "foto_profile": null
+      },
+      {
+        "mitra_id": 16,
+        "user_id": 34,
+        "nama_instansi": "Shopee",
+        "jenis_instansi": "Instansi Swasta",
+        "alamat": "Belum diisi",
+        "kontak": "Belum diisi",
+        "foto_profile": null
+      },
+      {
+        "mitra_id": 17,
+        "user_id": 35,
+        "nama_instansi": "PT Agro Teknologi Nusantara",
+        "jenis_instansi": "Perusahaan Teknologi Pertanian",
+        "alamat": "Jl. Raya Pajajaran No. 17, Bogor",
+        "kontak": "081298765432",
+        "foto_profile": null
+      },
+      {
+        "mitra_id": 18,
+        "user_id": 39,
+        "nama_instansi": "PT Agro Teknologi Nusantara",
+        "jenis_instansi": "Perusahaan Teknologi Pertanian",
+        "alamat": "Jl. Raya Pajajaran No. 17, Bogor",
+        "kontak": "081298765432",
+        "foto_profile": null
+      },
+      {
+        "mitra_id": 19,
+        "user_id": 41,
+        "nama_instansi": "Dicoding Indonesia",
+        "jenis_instansi": "Platform Edukasi Teknologi",
+        "alamat": "Dicoding Space, Jl. Batik Kumeli No. 50, Bandung",
+        "kontak": "081234567890",
+        "foto_profile": null
+      },
+      {
+        "mitra_id": 20,
+        "user_id": 42,
+        "nama_instansi": "HMP Sistem Informasi Universitas Ma Chung",
+        "jenis_instansi": "Organisasi Mahasiswa",
+        "alamat": "Villa Puncak Tidar Blok N No. 1, Malang",
+        "kontak": "081234567890",
+        "foto_profile": null
+      },
+      {
+        "mitra_id": 25,
+        "user_id": 52,
+        "nama_instansi": "PT Agro Digital Mandiri",
+        "jenis_instansi": "Perusahaan Teknologi",
+        "alamat": "Jl. Pajajaran No. 21, Bogor",
+        "kontak": "081234567890",
+        "foto_profile": "/uploads/profile/mitra-25/b52e65f6aacb41a48cc97c15437a9ec3.png"
+      },
+      {
+        "mitra_id": 26,
+        "user_id": 53,
+        "nama_instansi": "PT Agro Digital Mandiri",
+        "jenis_instansi": "Perusahaan Teknologi",
+        "alamat": "Jl. Pajajaran No. 21, Bogor",
+        "kontak": "081234567890",
+        "foto_profile": null
+      },
+      {
+        "mitra_id": 27,
+        "user_id": 55,
+        "nama_instansi": "PT Bina Talenta Nusantara",
+        "jenis_instansi": "Perusahaan Teknologi Agrikultur",
+        "alamat": "Jl. Meranti No. 18, Bogor",
+        "kontak": "081234567890",
+        "foto_profile": "/uploads/profile/mitra-27/bd49f49bc1d940a1b0fd8cb60d189853.png"
+      }
+    ],
+    "notifikasi": [
+      {
+        "notifikasi_id": 12,
+        "user_id": 37,
+        "judul": "Status Lamaran Diperbarui",
+        "pesan": "Lamaran Anda untuk 'Magang Data Analyst Pertanian' sekarang berstatus: ditolak.",
+        "jenis_notifikasi": "STATUS_LAMARAN",
+        "status_baca": false,
+        "created_at": "2026-05-26T18:00:50.658156+07:00"
+      },
+      {
+        "notifikasi_id": 13,
+        "user_id": 38,
+        "judul": "Status Lamaran Diperbarui",
+        "pesan": "Lamaran Anda untuk 'Magang Data Analyst Pertanian' sekarang berstatus: diterima.",
+        "jenis_notifikasi": "STATUS_LAMARAN",
+        "status_baca": true,
+        "created_at": "2026-05-26T18:00:53.554402+07:00"
+      },
+      {
+        "notifikasi_id": 14,
+        "user_id": 40,
+        "judul": "Status Lamaran Diperbarui",
+        "pesan": "Lamaran Anda untuk 'Magang UI/UX Research Agritech' sekarang berstatus: ditolak.",
+        "jenis_notifikasi": "STATUS_LAMARAN",
+        "status_baca": true,
+        "created_at": "2026-05-26T18:06:20.511101+07:00"
+      },
+      {
+        "notifikasi_id": 15,
+        "user_id": 40,
+        "judul": "Status Lamaran Diperbarui",
+        "pesan": "Lamaran Anda untuk 'Magang Frontend Developer Agritech' sekarang berstatus: diterima.",
+        "jenis_notifikasi": "STATUS_LAMARAN",
+        "status_baca": true,
+        "created_at": "2026-05-26T18:06:23.358448+07:00"
+      },
+      {
+        "notifikasi_id": 17,
+        "user_id": 53,
+        "judul": "Lamaran Baru Masuk",
+        "pesan": "Alya Nabila Putri baru mendaftar ke 'Magang Quality Assurance Agritech'.",
+        "jenis_notifikasi": "STATUS_LAMARAN",
+        "status_baca": true,
+        "created_at": "2026-05-27T16:04:58.673873+07:00"
+      },
+      {
+        "notifikasi_id": 18,
+        "user_id": 55,
+        "judul": "Lamaran Baru Masuk",
+        "pesan": "Naila Aurelia Putri baru mendaftar ke 'Magang Data Engineer Agritech'.",
+        "jenis_notifikasi": "STATUS_LAMARAN",
+        "status_baca": true,
+        "created_at": "2026-05-27T16:09:55.170605+07:00"
+      },
+      {
+        "notifikasi_id": 19,
+        "user_id": 56,
+        "judul": "Status Lamaran Diperbarui",
+        "pesan": "Lamaran Anda untuk 'Magang Data Engineer Agritech' sekarang berstatus: diterima.",
+        "jenis_notifikasi": "STATUS_LAMARAN",
+        "status_baca": true,
+        "created_at": "2026-05-27T16:09:55.231334+07:00"
+      }
+    ],
+    "studi_independen": [
+      {
+        "mbkm_id": 23,
+        "bidang": "Teknologi Informasi",
+        "poster": "/uploads/logbook/mahasiswa-18/lamaran-9/Screenshot 2026-05-20 213924.png",
+        "logo_url": null
+      }
+    ],
+    "users": [
+      {
+        "user_id": 6,
+        "nama": "DDD Corp",
+        "email": "hr224979@dddcorp.co.id",
+        "password": "$2b$12$IxYxXSooKTI5hw/nClQc0O7jJcRe5NTcI8ErBW6VkiwW7hsTmwYpu",
+        "role": "MITRA",
+        "created_at": "2026-04-24T15:56:50.905141+07:00"
+      },
+      {
+        "user_id": 24,
+        "nama": "Aulia Rahmasyifa Az zahra",
+        "email": "aauliaaz@apps.ipb.ac.id",
+        "password": "$2b$12$dS3t2CnEU.QLUuVcxHdHV.2QjLfItnIPdx6JXGye6GPq5igdP4vGC",
+        "role": "MAHASISWA",
+        "created_at": "2026-05-23T00:36:14.732132+07:00"
+      },
+      {
+        "user_id": 25,
+        "nama": "ponyo",
+        "email": "hrd@shopee.id",
+        "password": "$2b$12$v6zZwaIiHhUyJOhTVilsq./f0UkQYSH8XHpufaPbHrRhw4qT1F0eO",
+        "role": "MITRA",
+        "created_at": "2026-05-23T00:39:19.543084+07:00"
+      },
+      {
+        "user_id": 34,
+        "nama": "Shopee",
+        "email": "shopee@ac.id",
+        "password": "$2b$12$jA6YeiHr6PvZTYiFgf.SYefF5ofYisCetMT6kUU7w1RLD/wrDF/K6",
+        "role": "MITRA",
+        "created_at": "2026-05-26T17:59:11.411823+07:00"
+      },
+      {
+        "user_id": 35,
+        "nama": "PT Agro Teknologi Nusantara",
+        "email": "karier.agronusa.0526180042@example.com",
+        "password": "$2b$12$IHsLzwZay0cvcFRFtLxAYuZAPzEHsq6aiIyoIQXj1FACSM55Eisvi",
+        "role": "MITRA",
+        "created_at": "2026-05-26T18:00:45.150743+07:00"
+      },
+      {
+        "user_id": 36,
+        "nama": "Andika Pratama",
+        "email": "andika.pratama.0526180042@apps.ipb.ac.id",
+        "password": "$2b$12$qbnemem3cHNWDN9bOyBFmOkGd/Ud5K3A7IefLaLBIefvK2XQojmhO",
+        "role": "MAHASISWA",
+        "created_at": "2026-05-26T18:00:46.169331+07:00"
+      },
+      {
+        "user_id": 37,
+        "nama": "Siti Rahmawati",
+        "email": "siti.rahma.0526180042@apps.ipb.ac.id",
+        "password": "$2b$12$xTnfBiKlUdsUCc5ChT1gj.tSGQeJW5elpax63kQAYwZBJQgpx03Hi",
+        "role": "MAHASISWA",
+        "created_at": "2026-05-26T18:00:47.111153+07:00"
+      },
+      {
+        "user_id": 38,
+        "nama": "Bima Santoso",
+        "email": "bima.santoso.0526180042@apps.ipb.ac.id",
+        "password": "$2b$12$9OrmA5d0sM3mz/YMC43MhuIzT78T/GOS5mfAKI4EnOkpxnTglRYrK",
+        "role": "MAHASISWA",
+        "created_at": "2026-05-26T18:00:48.048892+07:00"
+      },
+      {
+        "user_id": 39,
+        "nama": "PT Agro Teknologi Nusantara",
+        "email": "karier.agronusa.single.0526180614@example.com",
+        "password": "$2b$12$DWrCltLNlqeMf5TmcuyPT.uMPT64XS9R33FNzE4BL4TKimZJ6LruK",
+        "role": "MITRA",
+        "created_at": "2026-05-26T18:06:17.129877+07:00"
+      },
+      {
+        "user_id": 40,
+        "nama": "Auliaa",
+        "email": "naila.putri.0526180614@apps.ipb.ac.id",
+        "password": "$2b$12$ikJbUt7D32KPwOgFvS8LaedDpOp9WWjlfG5RdFTpkVKiGV2zn1OQS",
+        "role": "MAHASISWA",
+        "created_at": "2026-05-26T18:06:18.174744+07:00"
+      },
+      {
+        "user_id": 41,
+        "nama": "Dicoding Indonesia",
+        "email": "akademi.dicoding.0526182132@example.com",
+        "password": "$2b$12$LcrJ2GCOhmHo1Ya3LTyPduidX/mV5o0iQi2W3jUN5p30nOPHjWNeW",
+        "role": "MITRA",
+        "created_at": "2026-05-26T18:21:35.215563+07:00"
+      },
+      {
+        "user_id": 42,
+        "nama": "HMP Sistem Informasi Universitas Ma Chung",
+        "email": "hmpsi.machung.0526182132@example.com",
+        "password": "$2b$12$lNOUZW6TMbJ.yp1II1AUQ.6pZ2sjRprimRxDMwXFpEiOZRkPgl.Aa",
+        "role": "MITRA",
+        "created_at": "2026-05-26T18:21:36.212612+07:00"
+      },
+      {
+        "user_id": 51,
+        "nama": "Raka Putra Pratama",
+        "email": "raka.pratama.0527155419@apps.ipb.ac.id",
+        "password": "$2b$12$H3mjbw7.8w7BnH5ewCEf1.5Fpg0vUXD1uskhmEarbdijROxRYlUZC",
+        "role": "MAHASISWA",
+        "created_at": "2026-05-27T15:54:19.753128+07:00"
+      },
+      {
+        "user_id": 52,
+        "nama": "PT Agro Digital Mandiri",
+        "email": "admin.0527155419@agrodigitalmandiri.co.id",
+        "password": "$2b$12$Ad58h2qTm5yos6JCGcVKBOtrY0UdS6nlQJ/1cKMzZbxChdyFk/.7y",
+        "role": "MITRA",
+        "created_at": "2026-05-27T15:54:20.830683+07:00"
+      },
+      {
+        "user_id": 53,
+        "nama": "PT Agro Digital Mandiri",
+        "email": "notif.mitra.0527160457@agrodigitalmandiri.co.id",
+        "password": "$2b$12$jqYqh7RR4LOfDuDSxlBpyuAUIOx0jPeykwboIHBkw8XSxDV4pjcRS",
+        "role": "MITRA",
+        "created_at": "2026-05-27T16:04:57.750235+07:00"
+      },
+      {
+        "user_id": 54,
+        "nama": "Alya Nabila Putri",
+        "email": "notif.mahasiswa.0527160457@apps.ipb.ac.id",
+        "password": "$2b$12$fbByCfg/tu8.G0dYZVjmMOIAm2ZtepXnA1VnZFv15OTjA/LRwCHsy",
+        "role": "MAHASISWA",
+        "created_at": "2026-05-27T16:04:58.242076+07:00"
+      },
+      {
+        "user_id": 55,
+        "nama": "PT Bina Talenta Nusantara",
+        "email": "karir.0527160953@binatalenta.co.id",
+        "password": "$2b$12$cng8t07.WP5wnzKG0XQfUehchYCcKVKbTC76BmdjCuh1HpqxrE2lC",
+        "role": "MITRA",
+        "created_at": "2026-05-27T16:09:53.709890+07:00"
+      },
+      {
+        "user_id": 56,
+        "nama": "Naila Aurelia Putri",
+        "email": "naila.aurelia.0527160953@apps.ipb.ac.id",
+        "password": "$2b$12$4ySu6uqa8.MM2MTREiSp9ulonaC8yEnVxpwBR1Toa4Uza2SwLJvv2",
+        "role": "MAHASISWA",
+        "created_at": "2026-05-27T16:09:54.453628+07:00"
+      },
+      {
+        "user_id": 59,
+        "nama": "Aulia Rahma",
+        "email": "aauliaz@apps.ipb.ac.id",
+        "password": "$2b$12$iES0yGIQwx2VR4zagmI8gOdCf8fi7Yi4ylvVhzOlsOKiP2gnlstFK",
+        "role": "MAHASISWA",
+        "created_at": "2026-05-29T14:18:35.569355+07:00"
+      }
+    ]
+  }
+}
