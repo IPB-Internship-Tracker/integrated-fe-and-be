@@ -8,9 +8,9 @@ import {
     CircleCheck,
     CircleX,
     BriefcaseBusiness,
+    CircleUser
 } from "lucide-react";
 
-import fotoMhs from "../../../assets/profile-mahasiswa.jpg";
 import { authService } from "../../../services/authService";
 import { mahasiswaService } from "../../../services/mahasiswaService";
 import { notifikasiService } from "../../../services/notifikasiService";
@@ -46,7 +46,7 @@ const TopbarMhs = () => {
     const [profileName, setProfileName] =
         useState("");
     const [profileImage, setProfileImage] =
-        useState(fotoMhs);
+        useState(null);
     const [unreadCount, setUnreadCount] =
         useState(0);
 
@@ -149,16 +149,11 @@ const TopbarMhs = () => {
 
                                 <span className="
                                     absolute
-                                    -top-1
                                     -right-1
-
                                     w-3
                                     h-3
-
                                     rounded-full
-
                                     bg-light-blue
-
                                     border-2
                                     border-white
                                 "></span>
@@ -450,19 +445,40 @@ const TopbarMhs = () => {
                         "
                     >
 
-                        {/* PHOTO */}
-                        <img
-                            src={profileImage}
-                            alt="Foto Mahasiswa"
+                        {/* AVATAR */}
+                        {profileImage ? (
 
-                            className="
-                                w-9
-                                h-9
+                            <img
+                                src={profileImage}
+                                alt="Logo Mitra"
+                                className="
+                                    w-8
+                                    h-8
+                                    rounded-full
+                                    object-cover
+                                "
+                            />
 
-                                rounded-full
-                                object-cover
-                            "
-                        />
+                        ) : (
+
+                            <div
+                                className="
+                                    w-8
+                                    h-8
+                                    rounded-full
+                                    flex
+                                    items-center
+                                    justify-center
+                                "
+                            >
+                                <CircleUser
+                                    size={24}
+                                    className="text-bold-blue"
+                                />
+                            </div>
+
+                        )}
+                        
 
                         {/* NAME */}
                         <span className="
