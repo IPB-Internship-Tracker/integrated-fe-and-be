@@ -6,7 +6,6 @@ import {
     ChevronDown,
     CircleCheck,
     CircleX,
-    CircleUser,
 } from "lucide-react";
 import logoShopee from "../../../assets/logo-shopee.png";
 import { authService } from "../../../services/authService";
@@ -29,7 +28,7 @@ const TopbarMitra = () => {
     const [profileName, setProfileName] =
         useState("");
     const [profileImage, setProfileImage] =
-        useState(null);
+        useState(logoShopee);
     const [notifications, setNotifications] =
         useState([]);
     const [unreadCount, setUnreadCount] =
@@ -357,39 +356,16 @@ const TopbarMitra = () => {
                         "
                     >
                         {/* AVATAR */}
-                        {profileImage ? (
-
-                            <img
-                                src={profileImage}
-                                alt="Logo Mitra"
-                                className="
-                                    w-8
-                                    h-8
-                                    rounded-full
-                                    object-cover
-                                "
-                            />
-
-                        ) : (
-
-                            <div
-                                className="
-                                    w-8
-                                    h-8
-                                    rounded-full
-                                    flex
-                                    items-center
-                                    justify-center
-                                "
-                            >
-                                <CircleUser
-                                    size={24}
-                                    className="text-bold-blue"
-                                />
-                            </div>
-
-                        )}
-                        
+                        <img
+                            src={profileImage}
+                            alt="Logo Mitra"
+                            className="
+                                w-8
+                                h-8
+                                rounded-full
+                                object-cover
+                            "
+                        />
                         {/* NAME */}
                         <span className="
                             text-sm
