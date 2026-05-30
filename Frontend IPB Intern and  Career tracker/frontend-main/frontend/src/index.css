@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f6f6ff;
+}
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@theme {
+  --color-bold-blue: #1B22A7;
+  --color-light-blue: #4260E6;
+  --color-light-blue-2: #E5E9FF;
+
+  --color-kuning-tua: #FDC500;
+  --color-kuning-muda: #FFF7E6;
+  
+  --color-hijau-muda-status: #D8FFDE;
+  --color-hijau-tua-status: #0C8C00;
+
+  --color-merah-tua-status: #A71B1D;
+  --color-merah-muda-status: #FFDDDD;
+
+  --color-biru-tua-status: #2A86FF;
+  --color-biru-muda-status: #D0F5FF;
+  
+  --color-kuning-tua-status: #FDC500;
+  --color-kuning-muda-status: #FFFFE5;
+  --color-kuning-tua-secondary: #CA8A00;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.3s ease-out;
+}
