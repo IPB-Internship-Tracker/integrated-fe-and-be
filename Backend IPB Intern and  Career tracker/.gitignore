@@ -320,3 +320,10 @@ tags
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,vim,visualstudiocode
+/app/generated/prisma
+
+# Abaikan node_modules di semua subfolder
+**/node_modules/
+
+# Abaikan semua file upload di dalam proyek backend
+**/Backend IPB Intern and  Career tracker/uploads/
