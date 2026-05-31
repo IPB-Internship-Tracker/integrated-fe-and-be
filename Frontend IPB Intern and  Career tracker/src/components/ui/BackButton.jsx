@@ -27,7 +27,12 @@ const BackButton = ({
 
   return (
 
-    <div className={position}>
+    <div
+      className={`
+        ${position}
+        z-[9999]
+      `}
+    >
 
       <button
         onClick={handleClick}

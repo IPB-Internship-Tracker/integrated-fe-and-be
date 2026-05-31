@@ -62,3 +62,132 @@ body {
 .animate-fadeInUp {
   animation: fadeInUp 0.3s ease-out;
 }
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    overflow-x: hidden;
+  }
+
+  .mobile-sidebar-button,
+  .mobile-sidebar-overlay {
+    display: block;
+  }
+
+  .dashboard-content {
+    margin-left: 0 !important;
+    min-width: 0;
+  }
+
+  .dashboard-main {
+    padding: 5rem 1rem 1rem !important;
+  }
+
+  .dashboard-sidebar {
+    z-index: 60;
+    width: min(82vw, 18rem) !important;
+    transform: translateX(-100%);
+    box-shadow: 20px 0 40px rgba(15, 23, 42, 0.25);
+  }
+
+  .dashboard-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .dashboard-sidebar button {
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+  }
+
+  .dashboard-sidebar span {
+    display: inline;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .col-span-2,
+  .col-span-3 {
+    grid-column: auto !important;
+  }
+
+  .flex.items-center.justify-between {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .w-\[360px\],
+  .w-\[400px\],
+  .w-\[420px\],
+  .w-\[500px\],
+  .w-\[1000px\],
+  .w-128,
+  .w-4xl {
+    width: 100% !important;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .min-w-\[180px\],
+  .min-w-\[350px\] {
+    min-width: min(100%, 280px) !important;
+  }
+
+  .max-w-\[350px\] {
+    max-width: 100% !important;
+  }
+
+  .px-8,
+  .px-10,
+  .px-15 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .p-8 {
+    padding: 1rem !important;
+  }
+
+  .py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .gap-6,
+  .gap-8,
+  .gap-10 {
+    gap: 1rem !important;
+  }
+
+  h1.text-3xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .text-xl {
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .bg-white.rounded-xl.shadow-sm.flex.items-center.justify-between,
+  .bg-white.rounded-xl.shadow-sm.px-5.py-4.flex.items-center.justify-between {
+    align-items: flex-start !important;
+    flex-direction: column;
+  }
+
+  .bg-white.rounded-xl.shadow-sm.flex.items-center.justify-between > div,
+  .bg-white.rounded-xl.shadow-sm.px-5.py-4.flex.items-center.justify-between > div {
+    width: 100%;
+  }
+
+  .absolute.right-0.w-\[360px\] {
+    right: -0.75rem;
+    width: calc(100vw - 2rem) !important;
+  }
+}

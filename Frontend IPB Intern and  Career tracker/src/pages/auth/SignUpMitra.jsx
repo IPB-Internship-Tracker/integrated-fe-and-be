@@ -22,8 +22,8 @@ const SignUpMitra = () => {
 
             <div className="flex flex-col items-center gap-8 py-20">
                 <Logo 
-                    logoSize="w-100"
-                    textSize="text-2xl"
+                    logoSize="w-80 md:w-100"
+                    textSize="text-xl md:text-2xl"
                 />
                 <SignUpForm
                     role="Mitra"

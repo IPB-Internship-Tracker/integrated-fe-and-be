@@ -14,6 +14,8 @@ import {
 const SidebarMitra = ({
   isCollapsed,
   setIsCollapsed,
+  isMobileOpen = false,
+  onMobileClose,
 }) => {
 
   const navigate = useNavigate();
@@ -70,10 +72,17 @@ const SidebarMitra = ({
 
   ];
 
+  const handleNavigate = (path) => {
+    navigate(path);
+    onMobileClose?.();
+  };
+  const showLabels = !isCollapsed || isMobileOpen;
+
   return (
 
     <aside
       className={`
+        dashboard-sidebar
         fixed
         top-0
         left-0
@@ -89,6 +98,12 @@ const SidebarMitra = ({
           isCollapsed
             ? "w-20"
             : "w-64"
+        }
+
+        ${
+          isMobileOpen
+            ? "mobile-open"
+            : ""
         }
       `}
     >
@@ -124,7 +139,7 @@ const SidebarMitra = ({
         </div>
 
         {/* LOGO */}
-        {!isCollapsed && (
+        {showLabels && (
 
           <div className="px-6 pb-4">
 
@@ -163,7 +178,7 @@ const SidebarMitra = ({
               key={index}
 
               onClick={() =>
-                navigate(item.path)
+                handleNavigate(item.path)
               }
 
               className={`
@@ -172,7 +187,7 @@ const SidebarMitra = ({
                 items-center
 
                 ${
-                  isCollapsed
+                  !showLabels
                     ? "justify-center"
                     : "gap-3"
                 }
@@ -208,7 +223,7 @@ const SidebarMitra = ({
                 }
               />
 
-            {!isCollapsed && (
+            {showLabels && (
 
               <span>
                 {item.label}
@@ -238,7 +253,7 @@ const SidebarMitra = ({
             items-center
 
             ${
-              isCollapsed
+              !showLabels
                 ? "justify-center"
                 : "gap-3"
             }
@@ -255,7 +270,7 @@ const SidebarMitra = ({
 
           <Settings size={18} />
 
-          {!isCollapsed && (
+          {showLabels && (
 
             <span>
               Pengaturan

@@ -2,6 +2,30 @@ const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 
 const AUTH_TOKEN_KEYS = ["access_token", "token"];
+export const API_LOADING_EVENT = "app:api-loading";
+
+let activeApiRequests = 0;
+
+const emitApiLoading = () => {
+  window.dispatchEvent(
+    new CustomEvent(API_LOADING_EVENT, {
+      detail: {
+        isLoading: activeApiRequests > 0,
+        activeRequests: activeApiRequests,
+      },
+    })
+  );
+};
+
+const startApiLoading = () => {
+  activeApiRequests += 1;
+  emitApiLoading();
+};
+
+const stopApiLoading = () => {
+  activeApiRequests = Math.max(activeApiRequests - 1, 0);
+  emitApiLoading();
+};
 
 export const getApiBaseUrl = () => API_BASE_URL.replace(/\/$/, "");
 
@@ -92,19 +116,25 @@ export const apiRequest = async (
     }
   }
 
-  const response = await fetch(buildUrl(path, query), {
-    method,
-    headers: requestHeaders,
-    body: isFormData || body === undefined ? body : JSON.stringify(body),
-  });
+  startApiLoading();
 
-  if (!response.ok) {
-    if (response.status === 401 || response.status === 403) {
-      clearAuthSession();
+  try {
+    const response = await fetch(buildUrl(path, query), {
+      method,
+      headers: requestHeaders,
+      body: isFormData || body === undefined ? body : JSON.stringify(body),
+    });
+
+    if (!response.ok) {
+      if (response.status === 401 || response.status === 403) {
+        clearAuthSession();
+      }
+      throw new Error(await getErrorMessage(response));
     }
-    throw new Error(await getErrorMessage(response));
-  }
 
-  if (response.status === 204) return null;
-  return response.json();
+    if (response.status === 204) return null;
+    return response.json();
+  } finally {
+    stopApiLoading();
+  }
 };

@@ -149,16 +149,33 @@ const ProgramListMitra = () => {
                     Program yang Anda Buat
                 </h1>
 
-                {/* DRAFT BUTTON */}
-                <Button
-                    label="Draft"
-                    to="/draft-list"
-                    className="
-                        text-md
-                        px-5
-                        py-2
-                    "
-                />
+                <div className="flex
+                    items-center
+                    justify-between
+                    gap-2"> 
+
+                    {/* DRAFT BUTTON */}
+                    <Button
+                        label="Draft"
+                        to="/draft-list"
+                        className="
+                            text-md
+                            px-5
+                            py-2
+                        "
+                    />
+
+                    {/* CREATE BUTTON */}
+                    <Button
+                        label = "+ Buat Program"
+                        onClick={() =>
+                        setOpenCreatePopup(true)
+                    }
+
+                    className="text-md px-4 py-2"
+                    />
+                </div>
+
 
             </div>
 

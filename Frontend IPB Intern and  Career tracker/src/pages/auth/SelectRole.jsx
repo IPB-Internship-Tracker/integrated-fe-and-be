@@ -36,7 +36,7 @@ const SelectRole = () => {
             {/* MAHASISWA */}
             <button
                 onClick={() => navigate("/login-mahasiswa")}
-                className="relative overflow-hidden bg-white rounded-[16px] w-auto md:w-[1000px] h-[160px] shadow-2xl transition duration-300 hover:scale-[1.02] cursor-pointer"
+                className="relative overflow-hidden bg-white rounded-[16px] w-auto md:w-[1000px] h-[120px] md:h-[160px] shadow-2xl transition duration-300 hover:scale-[1.02] cursor-pointer"
             >
 
                 <div className="absolute right-[-30px] bottom-[-40px] text-light-blue-2">
@@ -68,7 +68,7 @@ const SelectRole = () => {
         {/* MITRA */}
         <button
             onClick={() => navigate("/login-mitra")}
-            className="relative overflow-hidden bg-white rounded-[16px] w-auto md:w-[1000px] h-[160px] shadow-2xl transition duration-300 hover:scale-[1.02] cursor-pointer"
+            className="relative overflow-hidden bg-white rounded-[16px] w-[500px] md:w-[1000px] h-[120px] md:h-[160px] shadow-2xl transition duration-300 hover:scale-[1.02] cursor-pointer"
         >
 
             <div className="absolute right-[-20px] bottom-[-30px]  text-light-blue-2">

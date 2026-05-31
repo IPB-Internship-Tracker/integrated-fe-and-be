@@ -20,11 +20,11 @@ const LoginMitra = () => {
         <BackButton to="/select-role" />
 
       {/* Content */}
-        <div className="relative z-10 text-center text-white px-6 items-center">
-            <div className="flex flex-col items-center gap-8">
+        <div className="relative z-10 text-center text-white px-2 md:px-6 items-center sm:mt-10">
+            <div className="flex flex-col items-center gap-10">
                 <Logo 
-                    logoSize="w-100"
-                    textSize="text-2xl"
+                    logoSize="w-80 md:w-100"
+                    textSize="text-xl md:text-2xl"
                 />
                 <LoginForm
                     role={role}

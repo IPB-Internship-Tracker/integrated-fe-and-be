@@ -24,7 +24,9 @@ const LandingPage = () => {
         </p>
 
         {/* Logo / Title */}
-        <Logo />
+        <Logo 
+        logoSize="w-100 md:w-100"
+        textSize="text-xl md:text-2xl"/>
 
         <hr class="border-t-[0.1px] border-[#b5bbe1] my-4"></hr>
 
@@ -36,7 +38,7 @@ const LandingPage = () => {
         <Button
         label="Mulai"
         to="/select-role"
-        className="w-auto md:w-[200px] self-center mt-8"
+        className="w-[200px] md:w-[200px] self-center mt-8"
         />
 
       </div>

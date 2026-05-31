@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { CircleAlert } from 'lucide-react';
 import Button from './components/ui/Button';
+import GlobalLoader from './components/ui/GlobalLoader';
 import PopUpNotif from './components/ui/PopUpNotif';
+import { API_LOADING_EVENT } from './services/api';
 import { APP_ALERT_EVENT } from './services/alertService';
 
 // auth
@@ -57,6 +59,7 @@ import ProfileMitra from './pages/mitra/ProfileMitra';
 
 function App() {
   const [appAlert, setAppAlert] = useState(null);
+  const [isApiLoading, setIsApiLoading] = useState(false);
 
   useEffect(() => {
     const handleAlert = (event) => {
@@ -66,6 +69,16 @@ function App() {
     window.addEventListener(APP_ALERT_EVENT, handleAlert);
     return () =>
       window.removeEventListener(APP_ALERT_EVENT, handleAlert);
+  }, []);
+
+  useEffect(() => {
+    const handleApiLoading = (event) => {
+      setIsApiLoading(Boolean(event.detail?.isLoading));
+    };
+
+    window.addEventListener(API_LOADING_EVENT, handleApiLoading);
+    return () =>
+      window.removeEventListener(API_LOADING_EVENT, handleApiLoading);
   }, []);
 
   return (
@@ -161,6 +174,8 @@ function App() {
           }
         />
       </PopUpNotif>
+
+      <GlobalLoader isOpen={isApiLoading} />
     </div>
   );
 }

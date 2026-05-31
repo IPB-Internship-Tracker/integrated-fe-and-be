@@ -167,25 +167,33 @@ const TopbarMhs = () => {
                     {/* NOTIFICATION DROPDOWN */}
                     {showNotification && (
 
-                        <div className="
-                            absolute
-                            top-12
-                            right-0
-                            z-50
+                    <div className="
+                        absolute
+                        top-12
+                        right-0
+                        max-md:right-[-60px]
 
-                            w-[360px]
+                        md:right-0
 
-                            bg-white
-                            rounded-2xl
-                            shadow-2xl
+                        z-50
 
-                            border
-                            border-light-blue
+                        w-[280px]
+                        sm:w-[320px]
+                        md:w-[360px]
 
-                            overflow-hidden
+                        max-w-[calc(100vw-2rem)]
 
-                            animate-fadeInUp
-                        ">
+                        bg-white
+                        rounded-2xl
+                        shadow-2xl
+
+                        border
+                        border-light-blue
+
+                        overflow-hidden
+
+                        animate-fadeInUp
+                    ">
 
                             {/* HEADER */}
                             <div className="

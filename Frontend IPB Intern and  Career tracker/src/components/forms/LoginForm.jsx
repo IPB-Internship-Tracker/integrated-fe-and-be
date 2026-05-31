@@ -137,26 +137,53 @@ const handleSubmit = async (e) => {
     <div>
 
       {/* Card */}
-      <div className="relative z-10 bg-white rounded-2xl w-128 h-auto overflow-hidden shadow-2xl px-10 md:px-15 py-10">
+      <div
+        className="
+          relative
+          z-10
+          bg-white
+          rounded-2xl
+          w-full
+          md:w-128
+          overflow-hidden
+          shadow-2xl
+          px-6
+          md:px-10
+          py-6
+          md:py-10
+        "
+      >
 
-        {/* Ornament */}
-        <div className="absolute right-[-100px] bottom-[-50px] opacity-45 pointer-events-none">
-          <img
-            src={daunIpb}
-            alt="ornament"
-            className="w-[400px]"
-          />
-        </div>
+      {/* Ornament */}
+      <div
+        className="
+          absolute
+          right-[-100px]
+          bottom-[-50px]
+          opacity-45
+          pointer-events-none
+          z-0
+        "
+      >
+        <img
+          src={daunIpb}
+          alt="ornament"
+          className="w-[400px]"
+        />
+      </div>
 
         {/* Title */}
-        <h1 className="text-center text-bold-blue text-2xl font-bold mb-10">
-          Masuk Sebagai {role}
+        <h1 className="relative z-10 text-center text-bold-blue text-xl font-semibold">
+          Masuk Sebagai
+        </h1>
+        <h1 className="relative z-10 text-center text-bold-blue text-2xl font-bold mb-6 md:mb-10">
+          {role}
         </h1>
 
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="relative z-10 flex flex-col gap-5"
+          className="relative z-10 flex flex-col gap-2 md:gap-5"
         >
 
           {/* EMAIL */}
@@ -213,7 +240,7 @@ const handleSubmit = async (e) => {
             <Button
             label={isSubmitting ? "Masuk..." : "Masuk"}
             type="submit"
-            className="w-auto md:w-[200px] self-center mt-8"
+            className="w-[200px] self-center mt-8"
             />
 
           {/* REGISTER */}

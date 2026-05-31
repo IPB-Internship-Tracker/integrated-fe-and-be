@@ -151,7 +151,8 @@ const { id } = useParams();
           bg-white
           rounded-2xl
           shadow-md
-          p-8
+          p-5
+          md:p-8
           flex
           flex-col
           lg:flex-row
@@ -161,7 +162,20 @@ const { id } = useParams();
       >
 
         {/* LEFT */}
-        <div className="flex gap-5">
+      <div
+        className="
+          flex
+          flex-col
+          items-center
+          text-center
+
+          md:flex-row
+          md:items-start
+          md:text-left
+
+          gap-5
+        "
+      >
 
           {/* LOGO */}
           <div
@@ -183,7 +197,15 @@ const { id } = useParams();
           </div>
 
           {/* DETAIL */}
-          <div>
+          <div
+            className="
+              flex
+              flex-col
+              items-center
+
+              md:items-start
+            "
+          >
 
             <h1 className="text-xl font-bold text-bold-blue">
               {programDetail.title}
@@ -232,7 +254,7 @@ const { id } = useParams();
         </div>
 
         {/* RIGHT */}
-        <div className="flex flex-col justify-between items-end">
+        <div className="flex flex-col justify-between items-center md:items-end">
 
         <ProgramStatus status={programDetail.status} />
 
@@ -451,11 +473,14 @@ const { id } = useParams();
             <div
               key={index}
               className="
+                w-full
+                md:w-auto
                 border
                 border-kuning-tua
                 rounded-lg
                 px-6
                 py-3
+                text-center
                 text-bold-blue
                 font-medium
                 hover:bg-kuning-muda

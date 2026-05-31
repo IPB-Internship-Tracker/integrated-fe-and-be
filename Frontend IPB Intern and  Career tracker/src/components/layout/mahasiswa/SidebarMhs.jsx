@@ -21,6 +21,8 @@ import {
 const SidebarMhs = ({
   isCollapsed,
   setIsCollapsed,
+  isMobileOpen = false,
+  onMobileClose,
 }) => {
 
   const navigate = useNavigate();
@@ -113,10 +115,17 @@ const SidebarMhs = ({
     )
   );
 
+  const handleNavigate = (path) => {
+    navigate(path);
+    onMobileClose?.();
+  };
+  const showLabels = !isCollapsed || isMobileOpen;
+
   return (
 
     <aside
       className={`
+        dashboard-sidebar
         fixed
         top-0
         left-0
@@ -132,6 +141,12 @@ const SidebarMhs = ({
           isCollapsed
             ? "w-20"
             : "w-64"
+        }
+
+        ${
+          isMobileOpen
+            ? "mobile-open"
+            : ""
         }
       `}
     >
@@ -167,7 +182,7 @@ const SidebarMhs = ({
         </div>
 
         {/* LOGO */}
-        {!isCollapsed && (
+        {showLabels && (
 
           <div className="px-6 pb-4">
 
@@ -208,7 +223,7 @@ const SidebarMhs = ({
               key={index}
 
               onClick={() =>
-                navigate(item.path)
+                handleNavigate(item.path)
               }
               className={`
                 text-md
@@ -216,7 +231,7 @@ const SidebarMhs = ({
                 items-center
 
                 ${
-                  isCollapsed
+                  !showLabels
                     ? "justify-center"
                     : "gap-3"
                 }
@@ -252,7 +267,7 @@ const SidebarMhs = ({
                 }
               />
 
-              {!isCollapsed && (
+              {showLabels && (
 
                 <span>
                   {item.label}
@@ -270,7 +285,7 @@ const SidebarMhs = ({
         <button
           onClick={() => {
 
-            if (isCollapsed) {
+            if (!showLabels) {
               setIsCollapsed(false);
               return;
             }
@@ -283,7 +298,7 @@ const SidebarMhs = ({
               items-center
 
               ${
-                isCollapsed
+                !showLabels
                   ? "justify-center"
                   : "justify-between"
               }
@@ -309,7 +324,7 @@ const SidebarMhs = ({
 
               <ChartNoAxesColumn size={18} />
 
-              {!isCollapsed && (
+              {showLabels && (
 
                 <span>
                   Aktivitas
@@ -319,7 +334,7 @@ const SidebarMhs = ({
 
             </div>
 
-            {!isCollapsed && (
+            {showLabels && (
 
               isOpen
                 ? <ChevronUp />
@@ -330,7 +345,7 @@ const SidebarMhs = ({
           </button>
 
           {/* SUBMENU */}
-          {isOpen && !isCollapsed && (
+          {isOpen && showLabels && (
 
             <div
               className="
@@ -355,7 +370,7 @@ const SidebarMhs = ({
                     key={index}
 
                     onClick={() =>
-                      navigate(item.path)
+                      handleNavigate(item.path)
                     }
 
                     className={`
@@ -413,7 +428,7 @@ const SidebarMhs = ({
             items-center
 
             ${
-              isCollapsed
+              !showLabels
                 ? "justify-center"
                 : "gap-3"
             }
@@ -429,7 +444,7 @@ const SidebarMhs = ({
 
           <Settings size={20} />
 
-          {!isCollapsed && (
+          {showLabels && (
             <span>
               Pengaturan
             </span>

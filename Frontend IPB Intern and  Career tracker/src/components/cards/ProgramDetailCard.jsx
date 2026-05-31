@@ -39,17 +39,34 @@ const ProgramDetailCard = ({
           bg-white
           rounded-2xl
           shadow-md
-          p-8
+
+          p-5
+          md:p-8
+
           flex
           flex-col
           lg:flex-row
+
           justify-between
           gap-8
         "
       >
 
         {/* LEFT */}
-        <div className="flex gap-5">
+      <div
+        className="
+          flex
+          flex-col
+          items-center
+          text-center
+
+          md:flex-row
+          md:items-start
+          md:text-left
+
+          gap-5
+        "
+      >
 
           {/* LOGO */}
           <img
@@ -59,7 +76,15 @@ const ProgramDetailCard = ({
           />
 
           {/* DETAIL */}
-          <div>
+          <div
+            className="
+              flex
+              flex-col
+              items-center
+
+              md:items-start
+            "
+          >
 
             <h1 className="text-xl font-bold text-bold-blue">
               {programDetail.title}
@@ -70,7 +95,15 @@ const ProgramDetailCard = ({
             </p>
 
             {/* DEADLINE */}
-            <p className="text-gray-500 text-md">
+            <p
+              className="
+                text-gray-500
+                text-md
+                text-center
+
+                md:text-left
+              "
+            >
               Deadline Pendaftaran:
               <span className="font-bold text-black ml-2">
                 {programDetail.deadline}
@@ -80,12 +113,12 @@ const ProgramDetailCard = ({
         </div>
 
         {/* RIGHT */}
-        <div className="flex flex-col justify-between items-end">
+        <div className="flex flex-col justify-between items-center md:items-end">
           <ProgramStatus status={programDetail.status || "Registrasi Dibuka"} />
           {/* TIMELINE */}
           <div className="flex items-center gap-4 mt-10">
             <div className="text-right">
-              <p className="text-gray-500">
+              <p className="text-bold-blue">
                Timeline Kegiatan:
               </p>
               <p className="font-bold text-lg">

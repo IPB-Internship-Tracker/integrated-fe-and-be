@@ -12,7 +12,7 @@ const Logo = ({
       <img
         src={logo}
         alt="ICON Logo"
-        className={`${logoSize} mb-2`}
+        className={`${logoSize} mb-1 md:mb-2`}
       />
 
       {/* TEXT */}

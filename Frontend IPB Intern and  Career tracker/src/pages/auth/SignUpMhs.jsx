@@ -15,15 +15,16 @@ const SignUpMhs = () => {
       {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-bold-blue via-bold-blue/80 to-bold-blue/40"></div>
         
-        <BackButton to="/select-role" />
+        <BackButton to="/select-role"
+         />
 
       {/* Content */}
         <div className="relative z-10 text-center text-white px-6 items-center">
 
             <div className="flex flex-col items-center gap-8 py-20">
                 <Logo 
-                    logoSize="w-100"
-                    textSize="text-2xl"
+                    logoSize="w-80 md:w-100"
+                    textSize="text-xl md:text-2xl"
                 />
                 <SignUpForm
                     role="Mahasiswa IPB"

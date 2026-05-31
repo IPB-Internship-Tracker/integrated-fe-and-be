@@ -210,6 +210,7 @@ const LamaranDetail = () => {
                   flex
                   items-center
                   gap-3
+                  overflow-hidden
                 "
               >
 
@@ -227,6 +228,7 @@ const LamaranDetail = () => {
                     underline
                     hover:text-indigo-700
                     transition
+                    truncate
                   "
                 >
                   {doc.fileName}

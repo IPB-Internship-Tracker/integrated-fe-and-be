@@ -109,13 +109,17 @@ const LamaranList = () => {
             </p>
 
             {/* FILTER STATUS SEARCH */}
-            <div className="
-                flex
-                items-end
-                justify-between
-                gap-3
-                mt-8
-            ">
+            <div
+                className="
+                    flex
+                    flex-col
+                    md:flex-row
+                    md:items-end
+                    md:justify-between
+                    gap-4
+                    mt-8
+                "
+            >
 
                 {/* FILTER STATUS */}
                 <div>
@@ -133,7 +137,8 @@ const LamaranList = () => {
                     {/* BUTTON LIST */}
                     <div className="
                         flex
-                        gap-3
+                        gap-2
+                        md:gap-3
                         flex-wrap
                     ">
 

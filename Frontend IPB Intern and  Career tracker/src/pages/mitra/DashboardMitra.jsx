@@ -163,7 +163,7 @@ const DashboardMitra = () => {
 
                 {/* BUTTON */}
                 <Button
-                    label = "+ Buat Kegiatan"
+                    label = "+ Buat Program"
                     onClick={() =>
                     setOpenCreatePopup(true)
                 }
