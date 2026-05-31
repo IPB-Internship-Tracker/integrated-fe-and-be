@@ -12,6 +12,9 @@ class Settings(BaseSettings):
     db_pass: str
     db_name: str
 
+    supabase_url: str
+    supabase_service_key: str
+
     secret_key: str
     access_token_expire_minutes: int = 60
     password_reset_token_expire_minutes: int = 30

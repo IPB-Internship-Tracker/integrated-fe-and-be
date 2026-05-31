@@ -3,16 +3,16 @@ from uuid import uuid4
 
 from fastapi import HTTPException, UploadFile, status
 
-from app.config import settings
-
+from app.supabase_client import supabase
 
 DOCUMENT_EXTENSIONS = {".pdf", ".doc", ".docx", ".jpg", ".jpeg", ".png"}
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 
+BUCKET_NAME = "uploads"
+
 
 def _safe_suffix(filename: str | None) -> str:
-    suffix = Path(filename or "").suffix.lower()
-    return suffix
+    return Path(filename or "").suffix.lower()
 
 
 def save_upload_file(
@@ -22,6 +22,7 @@ def save_upload_file(
     allowed_extensions: set[str],
 ) -> str:
     suffix = _safe_suffix(file.filename)
+
     if suffix not in allowed_extensions:
         allowed = ", ".join(sorted(allowed_extensions))
         raise HTTPException(
@@ -29,28 +30,28 @@ def save_upload_file(
             detail=f"Tipe file tidak didukung. Gunakan: {allowed}",
         )
 
-    upload_root = Path(settings.upload_dir)
-    target_dir = upload_root / subdir
-    target_dir.mkdir(parents=True, exist_ok=True)
+    filename = f"{subdir}/{uuid4().hex}{suffix}"
 
-    filename = f"{uuid4().hex}{suffix}"
-    target = target_dir / filename
+    content = file.file.read()
 
-    total_bytes = 0
+    if len(content) > 5 * 1024 * 1024:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail="Ukuran file terlalu besar",
+        )
+
     try:
-        with target.open("wb") as output:
-            while chunk := file.file.read(1024 * 1024):
-                total_bytes += len(chunk)
-                if total_bytes > settings.upload_max_bytes:
-                    output.close()
-                    target.unlink(missing_ok=True)
-                    raise HTTPException(
-                        status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
-                        detail="Ukuran file terlalu besar",
-                    )
-                output.write(chunk)
+        supabase.storage.from_(BUCKET_NAME).upload(
+            filename,
+            content,
+            {
+                "content-type": file.content_type,
+            },
+        )
+
+        return supabase.storage.from_(BUCKET_NAME).get_public_url(
+            filename
+        )
+
     finally:
         file.file.close()
-
-    relative = target.relative_to(upload_root).as_posix()
-    return f"/uploads/{relative}"
