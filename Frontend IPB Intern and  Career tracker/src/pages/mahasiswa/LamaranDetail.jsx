@@ -58,7 +58,6 @@ const LamaranDetail = () => {
         label="Kembali"
         color="text-bold-blue"
         position="relative"
-        to="/lamaran-list"
       />
 
       {/* PROGRAM HEADER */}

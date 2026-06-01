@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 const BackButton = ({
-  to = "/",
+  fallbackTo = "/",
   label = "Kembali",
   color = "text-white",
   position = "absolute top-10 left-10",
@@ -13,16 +13,17 @@ const BackButton = ({
   const navigate = useNavigate();
 
   const handleClick = () => {
-
-    // kalau ada onClick
     if (onClick) {
       onClick();
+      return;
     }
 
-    // kalau tidak ada onClick
-    else if (to) {
-      navigate(to);
+    if (window.history.length > 1) {
+      navigate(-1);
+      return;
     }
+
+    navigate(fallbackTo);
   };
 
   return (

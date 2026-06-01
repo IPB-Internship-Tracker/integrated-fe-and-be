@@ -58,7 +58,6 @@ const PelamarDetail = () => {
         label="Kembali"
         color="text-bold-blue"
         position="relative"
-        to={`/pelamar-list/${applicantDetail.mbkmId}`}
       />
 
       {/* TITLE */}

@@ -273,7 +273,6 @@ const PelamarList = () => {
         label="Kembali"
         color="text-bold-blue"
         position="relative"
-        to={`/magang-detail-mitra/${id}`}
       />
 
       <div className="gap-2">

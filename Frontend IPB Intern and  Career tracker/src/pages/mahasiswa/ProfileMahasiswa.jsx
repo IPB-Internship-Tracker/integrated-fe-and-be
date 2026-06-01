@@ -108,7 +108,6 @@ const ProfileMhs = () => {
                     label="Kembali"
                     color="text-bold-blue"
                     position="relative"
-                    to="/dashboard-mahasiswa"
                 />
             </div>
 

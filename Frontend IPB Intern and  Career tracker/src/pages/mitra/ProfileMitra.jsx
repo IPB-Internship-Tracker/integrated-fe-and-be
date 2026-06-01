@@ -64,7 +64,6 @@ const ProfileMitra = () => {
                     label="Kembali"
                     color="text-bold-blue"
                     position="relative"
-                    to="/dashboard-mitra"
                 />
             </div>
 

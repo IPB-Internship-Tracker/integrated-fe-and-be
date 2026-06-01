@@ -301,11 +301,6 @@ const LogbookDetail = ({ readOnly = false }) => {
         label="Kembali"
         color="text-bold-blue"
         position="relative"
-        to={
-          readOnly && programDetail.mbkmId
-            ? `/pelamar-list/${programDetail.mbkmId}`
-            : "/logbook-list"
-        }
       />
 
       {/* HEADER */}

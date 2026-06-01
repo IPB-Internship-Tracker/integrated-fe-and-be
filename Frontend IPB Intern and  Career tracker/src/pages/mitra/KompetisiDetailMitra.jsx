@@ -1,17 +1,9 @@
-import BackButton from "../../components/ui/BackButton";
-import CreateMagangForm from "../../components/forms/CreateMagangForm";
-import DocRequirementForm from "../../components/forms/DocRequirementForm";
-import PopUpNotif from "../../components/ui/PopUpNotif";
 import logoShopee from "../../assets/logo-shopee.png";
 import Poster from "../../assets/poster.png";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import ProgramStatus from "../../components/ui/ProgramStatus";
+import { useParams } from "react-router-dom";
 import ProgramDetailCard from "../../components/cards/ProgramDetailCard";
 import {
-  CircleAlert,
-  CircleCheck,
-  CalendarDays,
   Pencil,
 } from "lucide-react";
 import Button from "../../components/ui/Button";  
@@ -21,13 +13,6 @@ import { showAlert } from "../../services/alertService";
 
 const KompetisiDetailMitra = () => {
     const { id } = useParams();
-    const navigate = useNavigate();
-
-    const [openBackPopup, setOpenBackPopup] =
-    useState(false);
-
-    const [openSavePopup, setOpenSavePopup] =
-    useState(false);
 
 const fallbackProgramDetail = {
 
@@ -71,7 +56,6 @@ useEffect(() => {
 
     <ProgramDetailCard
       programDetail={programDetail}
-      backTo="/program-list-mitra"
       actionButton={
         <Button
           label="Edit"

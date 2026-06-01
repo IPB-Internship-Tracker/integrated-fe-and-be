@@ -14,7 +14,6 @@ import { kegiatanService } from "../../services/kegiatanService";
 import { lamaranService } from "../../services/lamaranService";
 import { mahasiswaService } from "../../services/mahasiswaService";
 import {
-  getKegiatanDetailRoute,
   mapKegiatanToCard,
   mapMahasiswaProfileToUi,
 } from "../../services/adapters";
@@ -30,7 +29,6 @@ const FormPendaftaran = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const [uploadedFiles, setUploadedFiles] = useState({});
-    const [backTo, setBackTo] = useState(`/magang-detail/${id || 1}`);
 
 
     const handleFileChange = (e, field) => {
@@ -123,10 +121,6 @@ const FormPendaftaran = () => {
                         logo: card.logo,
                     })
                 );
-                setBackTo(
-                    getKegiatanDetailRoute(card, false)
-                );
-
                 const profile =
                     mapMahasiswaProfileToUi(mahasiswa);
                 setPersonalData({
@@ -167,7 +161,6 @@ const FormPendaftaran = () => {
         label="Kembali"
         color="text-bold-blue"
         position="relative"
-        to={backTo}
       />
 
       {/* PROGRAM HEADER */}

@@ -5,7 +5,6 @@ import BackButton from "../../components/ui/BackButton";
 import {
   GraduationCap,
   Building2,
-  ArrowLeft,
 } from "lucide-react";
 
 const SelectRole = () => {
@@ -21,7 +20,7 @@ const SelectRole = () => {
       {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-bold-blue via-bold-blue/80 to-bold-blue/40"></div>
       
-        <BackButton to="/" />
+        <BackButton />
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-6 items-center max-w-3xl">

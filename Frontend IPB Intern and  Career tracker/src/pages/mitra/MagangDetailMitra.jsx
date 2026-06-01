@@ -113,7 +113,6 @@ const MagangDetailMitra = () => {
         label="Kembali"
         color="text-bold-blue"
         position="relative"
-        to="/program-list-mitra"
       />
 
       {/* HEADER */}

@@ -66,7 +66,6 @@ const StupenDetail = () => {
   return (
     <ProgramDetailCard
       programDetail={programDetail}
-      backTo="/stupen-list"
       actionButton={
         <Button
           label="Daftar"

@@ -23,6 +23,15 @@ const CreateKompetisi = () => {
   const [isDirty, setIsDirty] =
     useState(false);
 
+  const goBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+      return;
+    }
+
+    navigate("/dashboard-mitra");
+  };
+
   return (
 
     <div className="flex flex-col items-center py-5">
@@ -39,7 +48,7 @@ const CreateKompetisi = () => {
             }
             // kalau belum isi apa2
             else {
-              navigate("/dashboard-mitra");
+              goBack();
             }
           }}
         />
@@ -70,7 +79,7 @@ const CreateKompetisi = () => {
           label="Batalkan membuat program"
           onClick={() => {
             setOpenConfirmPopup(false);
-            navigate("/dashboard-mitra");
+            goBack();
           }}
 
           className="

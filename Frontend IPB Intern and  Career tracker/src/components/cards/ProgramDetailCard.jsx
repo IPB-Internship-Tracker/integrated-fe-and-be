@@ -7,7 +7,6 @@ import ProgramStatus from "../../components/ui/ProgramStatus";
 
 const ProgramDetailCard = ({
   programDetail,
-  backTo,
   actionButton,
 }) => {
   return (
@@ -19,7 +18,6 @@ const ProgramDetailCard = ({
         label="Kembali"
         color="text-bold-blue"
         position="relative"
-        to={backTo}
       />
 
       {/* TITLE */}

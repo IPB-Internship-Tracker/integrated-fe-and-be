@@ -127,7 +127,6 @@ const { id } = useParams();
         label="Kembali"
         color="text-bold-blue"
         position="relative"
-        to="/magang-list"
       />
 
       {/* TITLE */}

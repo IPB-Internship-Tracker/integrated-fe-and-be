@@ -35,6 +35,19 @@ const EditMagang = () => {
     const [publishedProgramId, setPublishedProgramId] =
     useState(null);
 
+    const goBack = () => {
+      if (window.history.length > 1) {
+        navigate(-1);
+        return;
+      }
+
+      navigate(
+        isDraft
+          ? "/draft-list"
+          : `/magang-detail-mitra/${id}`
+      );
+    };
+
   const [initialData, setInitialData] =
     useState({
       namaPerusahaan: "",
@@ -102,11 +115,7 @@ const EditMagang = () => {
                 setOpenBackPopup(true);
 
               } else {
-                navigate(
-                  isDraft
-                    ? "/draft-list"
-                    : `/magang-detail-mitra/${id}`
-                );
+                goBack();
               }
             }}
         />
@@ -130,11 +139,7 @@ const EditMagang = () => {
             <Button
                 label="Batalkan Perubahan"
                 onClick={() => {
-                  navigate(
-                    isDraft
-                      ? "/draft-list"
-                      : `/magang-detail-mitra/${id}`
-                  );
+                  goBack();
                 }}
                 className="
                 border

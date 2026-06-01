@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { CircleAlert } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { CircleAlert, BriefcaseBusiness, Trophy,BookOpen } from "lucide-react";
 import { showAlert } from "../../services/alertService";
 
 import SearchBar from "../../components/ui/SearchBar";
@@ -14,9 +15,13 @@ import { mitraService } from "../../services/mitraService";
 import { getKegiatanDetailRoute, mapKegiatanToCard } from "../../services/adapters";
 
 const ProgramListMitra = () => {
+    const navigate = useNavigate();
     // FILTER CATEGORY
     const [selectedCategory, setSelectedCategory] =
         useState("Semua");
+
+    const [openCreatePopup, setOpenCreatePopup] =
+        useState(false);
 
     // SEARCH
     const [search, setSearch] =
@@ -331,6 +336,102 @@ const ProgramListMitra = () => {
                 onPageChange={setCurrentPage}
             />
 
+
+        {/* POPUP CREATE PROGRAM */}
+            <PopUpNotif
+                isOpen={openCreatePopup}
+                onClose={() =>
+                    setOpenCreatePopup(false)
+                }
+                title="Buat Kegiatan"
+                description=""
+            >
+                <div className="w-full space-y-4">
+                    {/* MAGANG */}
+                    <button
+                        onClick={() =>
+                            navigate("/create-magang")
+                        }
+                        className="
+                            w-full
+                            border
+                            border-light-blue
+                            rounded-2xl
+                            p-5
+                            flex
+                            items-center
+                            gap-5
+                            hover:bg-light-blue-2
+                            transition
+                            cursor-pointer
+                        "
+                    >
+                        <BriefcaseBusiness
+                            size={25}
+                            className="text-bold-blue"
+                        />
+                        <span className="text-lg font-medium">
+                            Magang
+                        </span>
+                    </button>
+
+                    {/* KOMPETISI */}
+                    <button
+                    onClick={() =>
+                        navigate("/create-kompetisi")
+                        }
+                        className="
+                            w-full
+                            border
+                            border-light-blue
+                            rounded-2xl
+                            p-5
+                            flex
+                            items-center
+                            gap-5
+                            hover:bg-light-blue-2
+                            transition
+                            cursor-pointer
+                        "
+                    >
+                        <Trophy
+                            size={25}
+                            className="text-bold-blue"
+                        />
+                        <span className="text-lg font-medium">
+                            Kompetisi
+                        </span>
+                    </button>
+
+                    {/* STUPEN */}
+                    <button
+                    onClick={() =>
+                        navigate("/create-studi-independen")
+                        }
+                        className="
+                            w-full
+                            border
+                            border-light-blue
+                            rounded-2xl
+                            p-5
+                            flex
+                            items-center
+                            gap-5
+                            hover:bg-light-blue-2
+                            transition
+                            cursor-pointer
+                        "
+                    >
+                        <BookOpen
+                            size={25}
+                            className="text-bold-blue"
+                        />
+                        <span className="text-lg font-medium">
+                            Studi Independen
+                        </span>
+                    </button>
+                </div>
+            </PopUpNotif>
         </div>
     );
 };

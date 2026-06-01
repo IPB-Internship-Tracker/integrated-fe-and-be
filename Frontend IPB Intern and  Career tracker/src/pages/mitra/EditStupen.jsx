@@ -40,6 +40,19 @@ const EditStupen = () => {
   const [publishedProgramId, setPublishedProgramId] =
     useState(null);
 
+  const goBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+      return;
+    }
+
+    navigate(
+      isDraft
+        ? "/draft-list"
+        : `/stupen-detail-mitra/${id}`
+    );
+  };
+
   const [initialData, setInitialData] =
     useState({
       logo: logoShopee,
@@ -95,11 +108,7 @@ const EditStupen = () => {
             setOpenBackPopup(true);
 
           } else {
-            navigate(
-              isDraft
-                ? "/draft-list"
-                : `/stupen-detail-mitra/${id}`
-            );
+            goBack();
           }
         }}
       />
@@ -128,11 +137,7 @@ const EditStupen = () => {
             <Button
                 label="Batalkan Perubahan"
                 onClick={() => {
-                  navigate(
-                    isDraft
-                      ? "/draft-list"
-                      : `/stupen-detail-mitra/${id}`
-                  );
+                  goBack();
                 }}
                 className="
                 border

@@ -55,7 +55,6 @@ const KompetisiDetail = () => {
 
     <ProgramDetailCard
       programDetail={programDetail}
-      backTo="/kompetisi-list"
       actionButton={
         <Button
           label="Daftar"
