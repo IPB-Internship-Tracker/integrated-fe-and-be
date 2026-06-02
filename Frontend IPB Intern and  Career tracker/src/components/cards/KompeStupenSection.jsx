@@ -2,7 +2,6 @@ import NextButton from "../ui/NextButton";
 import KompeStupenCard from "./KompeStupenCard";
 
 const KompeStupenSection = ({
-    logo,
     sectionTitle,
     buttonTo,
     programs,

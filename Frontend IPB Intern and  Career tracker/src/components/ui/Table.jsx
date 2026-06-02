@@ -1,6 +1,7 @@
 const Table = ({
   columns = [],
   data = [],
+  emptyMessage = "Belum ada data",
 }) => {
 
   return (
@@ -27,37 +28,53 @@ const Table = ({
         </thead>
         {/* BODY */}
         <tbody>
-          {data.map((row, rowIndex) => (
-            <tr
-              key={rowIndex}
-              className="
-                bg-white
-                shadow-sm
-                hover:bg-light
-                transition">
-
-              {columns.map((column, colIndex) => (
-
-                <td
-                  key={colIndex}
-                  className="
-                    px-6
-                    py-4
-                    border-t
-                    border-y
-                    border-light-blue/40
-                    text-black
-                    text-sm ">
-
-                  {/* CUSTOM RENDER */}
-                  {column.render
-                    ? column.render(row)
-                    : row[column.accessor]
-                  }
-                </td>
-              ))}
+          {data.length === 0 ? (
+            <tr>
+              <td
+                colSpan={columns.length}
+                className="
+                  py-8
+                  text-center
+                  text-light-blue
+                  italic
+                  border-y
+                  border-light-blue/40
+                  bg-white
+                "
+              >
+                {emptyMessage}
+              </td>
             </tr>
-          ))}
+          ) : (
+            data.map((row, rowIndex) => (
+              <tr
+                key={rowIndex}
+                className="
+                  bg-white
+                  shadow-sm
+                  hover:bg-light
+                  transition"
+              >
+                {columns.map((column, colIndex) => (
+                  <td
+                    key={colIndex}
+                    className="
+                      px-6
+                      py-4
+                      border-t
+                      border-y
+                      border-light-blue/40
+                      text-black
+                      text-sm"
+                  >
+                    {column.render
+                      ? column.render(row)
+                      : row[column.accessor]}
+                  </td>
+                ))}
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>

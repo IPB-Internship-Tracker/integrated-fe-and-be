@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import KompeStupenSection from "../../components/cards/KompeStupenSection";
 import { useEffect, useState } from "react";
 import { kegiatanService } from "../../services/kegiatanService";
+import { attachMitraCompanies } from "../../services/kegiatanCompanyService";
 import { lamaranService } from "../../services/lamaranService";
 import { mahasiswaService } from "../../services/mahasiswaService";
 import {
@@ -65,20 +66,30 @@ const DashboardMhs = () => {
                 setAktivitasData(
                     lamarans.map(mapLamaranToListItem)
                 );
+                const [
+                    magangWithCompanies,
+                    kompetisiWithCompanies,
+                    stupenWithCompanies,
+                ] = await Promise.all([
+                    attachMitraCompanies(magang.slice(0, 4)),
+                    attachMitraCompanies(kompetisi.slice(0, 4)),
+                    attachMitraCompanies(stupen.slice(0, 4)),
+                ]);
+
                 setMagangPrograms(
-                    magang.slice(0, 4).map((item) => ({
+                    magangWithCompanies.map((item) => ({
                         ...mapKegiatanToCard(item),
                         to: `/magang-detail/${item.mbkm_id}`,
                     }))
                 );
                 setKompetisiPrograms(
-                    kompetisi.slice(0, 4).map((item) => ({
+                    kompetisiWithCompanies.map((item) => ({
                         ...mapKegiatanToCard(item),
                         to: `/kompetisi-detail/${item.mbkm_id}`,
                     }))
                 );
                 setStupenPrograms(
-                    stupen.slice(0, 4).map((item) => ({
+                    stupenWithCompanies.map((item) => ({
                         ...mapKegiatanToCard(item),
                         to: `/studi-independen-detail/${item.mbkm_id}`,
                     }))

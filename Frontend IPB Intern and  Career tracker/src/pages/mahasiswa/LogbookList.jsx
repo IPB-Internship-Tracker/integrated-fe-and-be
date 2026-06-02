@@ -120,6 +120,7 @@ const LogbookList = () => {
       <Table
         columns={columns}
         data={data}
+        emptyMessage = "Belum ada logbook. Ikuti program magang untuk mulai membuat logbook aktivitas Anda."
       />
 
 

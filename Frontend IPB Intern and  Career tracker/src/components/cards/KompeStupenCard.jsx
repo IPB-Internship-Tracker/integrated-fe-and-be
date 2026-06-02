@@ -2,12 +2,9 @@ import { MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const KompeStupenCard = ({
-    id,
     logo,
     title,
     company,
-    category,
-    location,
     deadline,
     to,
     className = "",

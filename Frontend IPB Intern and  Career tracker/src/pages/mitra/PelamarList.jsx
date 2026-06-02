@@ -335,26 +335,15 @@ const PelamarList = () => {
 
             {/* TABLE */}
             <Table
-                columns={columns}
-                data={paginatedApplicants}
-        />
-
-        {filteredApplicants.length === 0 ? (
-          <div
-            className="
-              bg-white
-              border
-              border-light-blue/40
-              px-6
-              py-8
-              text-center
-              text-gray-500
-              shadow-sm
-            "
-          >
-            Tidak ada pelamar untuk status ini.
-          </div>
-        ) : (
+              columns={columns}
+              data={paginatedApplicants}
+              emptyMessage={
+                selectedStatusFilter === "Semua"
+                  ? "Belum ada pelamar."
+                  : `Belum ada pelamar dengan status ${selectedStatusFilter}.`
+              }
+            />
+        {filteredApplicants.length > 0 && (
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}

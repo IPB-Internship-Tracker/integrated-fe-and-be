@@ -4,6 +4,7 @@ import KompeStupenCard from "../../components/cards/KompeStupenCard";
 import {useEffect, useState} from "react";
 import Pagination from "../../components/ui/Pagination";
 import { kegiatanService } from "../../services/kegiatanService";
+import { attachMitraCompanies } from "../../services/kegiatanCompanyService";
 import {
     mapKegiatanToCard,
     matchesSearch,
@@ -23,8 +24,10 @@ const StupenListMhs = () => {
                 const data = await kegiatanService.list({
                     kategori: "studi_independen",
                 });
+                const dataWithCompanies =
+                    await attachMitraCompanies(data);
                 setProgramList(
-                    data.map((item) =>
+                    dataWithCompanies.map((item) =>
                         mapKegiatanToCard(item)
                     )
                 );
@@ -38,10 +41,6 @@ const StupenListMhs = () => {
 
     // STATE
     const [currentPage, setCurrentPage] = useState(1);
-
-    useEffect(() => {
-        setCurrentPage(1);
-    }, [search]);
 
     const filteredPrograms =
         programList.filter((program) =>
@@ -69,9 +68,10 @@ const StupenListMhs = () => {
                 <SearchBar
                     placeholder = "Cari..."
                     value={search}
-                    onChange={(e) =>
-                        setSearch(e.target.value)
-                    }
+                    onChange={(e) => {
+                        setSearch(e.target.value);
+                        setCurrentPage(1);
+                    }}
                 />
 
             </div>

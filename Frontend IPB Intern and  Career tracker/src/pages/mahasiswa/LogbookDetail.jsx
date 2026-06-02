@@ -343,6 +343,7 @@ const LogbookDetail = ({ readOnly = false }) => {
       <Table
         columns={columns}
         data={data}
+        emptyMessage="Belum ada log aktivitas. Klik tombol 'Tambah Log' untuk menambahkan aktivitas pertama Anda."
       />
 
       {/* POPUP */}
