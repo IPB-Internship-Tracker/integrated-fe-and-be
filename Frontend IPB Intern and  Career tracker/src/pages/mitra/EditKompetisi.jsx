@@ -279,7 +279,11 @@ const EditKompetisi = () => {
             setOpenSavePopup(false);
 
             navigate(
-              `/kompetisi-detail-mitra/${publishedProgramId || id}`
+              `/kompetisi-detail-mitra/${publishedProgramId || id}`,
+              {
+                replace: true,
+                state: { backTo: "/program-list-mitra" },
+              }
             );
           }}
         />

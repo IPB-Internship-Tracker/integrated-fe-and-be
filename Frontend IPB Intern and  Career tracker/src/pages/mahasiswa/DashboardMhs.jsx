@@ -1,3 +1,4 @@
+import Hero from "../../assets/hero.png";
 import BidangCard from "../../components/cards/BidangCard";
 import LamaranCard from "../../components/cards/LamaranCard";
 import ReminderCard from "../../components/cards/ReminderCard";
@@ -119,9 +120,20 @@ const DashboardMhs = () => {
     
     return (
         <div>
-            <h1 className="text-3xl font-bold text-bold-blue">
-                Selamat Datang, <span className="text-bold-blue">{userName}</span>!
-            </h1>
+            <div>
+                <div className="mb-8">
+                    <img
+                        src={Hero}
+                        alt="Ilustrasi mahasiswa sedang mencari peluang magang dan kompetisi"
+                    />
+                    </div>
+                <div>
+                    <h1 className="text-3xl font-bold text-bold-blue">
+                    Selamat Datang, <span className="text-bold-blue">{userName}</span>!
+                    </h1>
+                </div>
+            </div>
+            
 
             {/* BIDANG CARD SECTION */}
             <div className="grid grid-cols-3 gap-6 mt-8">

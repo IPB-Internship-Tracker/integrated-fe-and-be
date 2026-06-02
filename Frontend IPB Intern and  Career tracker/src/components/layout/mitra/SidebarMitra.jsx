@@ -2,6 +2,7 @@ import {
   useNavigate,
   useLocation,
 } from "react-router-dom";
+import Logo from "../../../assets/logo-icon-text.png";
 
 import {
   House,
@@ -144,12 +145,8 @@ const SidebarMitra = ({
           <div className="px-6 pb-4">
 
             <h1 className="text-2xl font-bold">
-              ICON
+              <img src={Logo} alt="Logo" className="w-auto h-15 inline-block mr-2 mb-2" />
             </h1>
-
-            <p className="text-sm text-yellow-300">
-              IPB Career Opportunity Network
-            </p>
 
           </div>
 

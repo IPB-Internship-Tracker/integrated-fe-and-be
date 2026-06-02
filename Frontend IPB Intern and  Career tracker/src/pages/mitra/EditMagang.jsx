@@ -295,7 +295,11 @@ const EditMagang = () => {
             onClick={() => {
             setOpenSavePopup(false);
             navigate(
-              `/magang-detail-mitra/${publishedProgramId || id}`
+              `/magang-detail-mitra/${publishedProgramId || id}`,
+              {
+                replace: true,
+                state: { backTo: "/program-list-mitra" },
+              }
             );
             }}
         />

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 const BackButton = ({
@@ -11,10 +11,16 @@ const BackButton = ({
 }) => {
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClick = () => {
     if (onClick) {
       onClick();
+      return;
+    }
+
+    if (location.state?.backTo) {
+      navigate(location.state.backTo, { replace: true });
       return;
     }
 

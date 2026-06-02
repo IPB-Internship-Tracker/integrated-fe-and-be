@@ -5,6 +5,7 @@ import { showAlert } from "../../services/alertService";
 import SearchBar from "../../components/ui/SearchBar";
 import FilterButton from "../../components/ui/FilterButton";
 import Pagination from "../../components/ui/Pagination";
+import EmptyMessage from "../../components/ui/EmptyMessage";
 import BackButton from "../../components/ui/BackButton";
 import ProgramListCard from "../../components/cards/ProgramListCard";
 import PopUpNotif from "../../components/ui/PopUpNotif";
@@ -108,6 +109,13 @@ const DraftList = () => {
             startIndex + itemsPerPage
         );
 
+    const emptyMessage =
+        programList.length === 0
+            ? "Belum ada draft."
+            : selectedCategory !== "Semua"
+                ? `Belum ada draft kategori ${selectedCategory}.`
+                : "Draft yang dicari belum ditemukan.";
+
     return (
         <div>
             <BackButton
@@ -151,9 +159,10 @@ const DraftList = () => {
                         active={
                             selectedCategory === "Semua"
                         }
-                        onClick={() =>
-                            setSelectedCategory("Semua")
-                        }
+                        onClick={() => {
+                            setSelectedCategory("Semua");
+                            setCurrentPage(1);
+                        }}
                     />
 
                     <FilterButton
@@ -161,9 +170,10 @@ const DraftList = () => {
                         active={
                             selectedCategory === "Magang"
                         }
-                        onClick={() =>
-                            setSelectedCategory("Magang")
-                        }
+                        onClick={() => {
+                            setSelectedCategory("Magang");
+                            setCurrentPage(1);
+                        }}
                     />
 
                     <FilterButton
@@ -171,9 +181,10 @@ const DraftList = () => {
                         active={
                             selectedCategory === "Kompetisi"
                         }
-                        onClick={() =>
-                            setSelectedCategory("Kompetisi")
-                        }
+                        onClick={() => {
+                            setSelectedCategory("Kompetisi");
+                            setCurrentPage(1);
+                        }}
                     />
 
                     <FilterButton
@@ -182,11 +193,12 @@ const DraftList = () => {
                             selectedCategory ===
                             "Studi Independen"
                         }
-                        onClick={() =>
+                        onClick={() => {
                             setSelectedCategory(
                                 "Studi Independen"
-                            )
-                        }
+                            );
+                            setCurrentPage(1);
+                        }}
                     />
 
                 </div>
@@ -197,9 +209,10 @@ const DraftList = () => {
                     <SearchBar
                         placeholder="Cari program..."
                         value={search}
-                        onChange={(e) =>
-                            setSearch(e.target.value)
-                        }
+                        onChange={(e) => {
+                            setSearch(e.target.value);
+                            setCurrentPage(1);
+                        }}
                     />
 
                 </div>
@@ -214,8 +227,8 @@ const DraftList = () => {
                 mt-8
             ">
 
-                {currentPrograms.map(
-                    (program) => (
+                {currentPrograms.length > 0 ? (
+                    currentPrograms.map((program) => (
 
                         <ProgramListCard
                             key={program.id}
@@ -232,7 +245,9 @@ const DraftList = () => {
                             }
                         />
 
-                    )
+                    ))
+                ) : (
+                    <EmptyMessage message={emptyMessage} />
                 )}
 
             </div>
@@ -270,11 +285,13 @@ const DraftList = () => {
             </PopUpNotif>
 
             {/* PAGINATION */}
-            <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={setCurrentPage}
-            />
+            {filteredPrograms.length > 0 && (
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={setCurrentPage}
+                />
+            )}
 
 
         </div>

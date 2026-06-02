@@ -4,6 +4,7 @@ import { showAlert } from "../../services/alertService";
 import FilterButton from "../../components/ui/FilterButton";
 import SearchBar from "../../components/ui/SearchBar";
 import Pagination from "../../components/ui/Pagination";
+import EmptyMessage from "../../components/ui/EmptyMessage";
 import LamaranListCard from "../../components/cards/LamaranListCard";
 import { lamaranService } from "../../services/lamaranService";
 import { mapLamaranToListItem } from "../../services/adapters";
@@ -86,6 +87,13 @@ const LamaranList = () => {
             startIndex + itemsPerPage
         );
 
+    const emptyMessage =
+        applications.length === 0
+            ? "Belum ada kegiatan yang dilamar."
+            : selectedStatus !== "Semua"
+                ? `Belum ada kegiatan yang dilamar dengan status ${selectedStatus}.`
+                : "Kegiatan yang dicari belum ditemukan.";
+
     return (
 
         <div>
@@ -148,11 +156,12 @@ const LamaranList = () => {
                                 selectedStatus ===
                                 "Semua"
                             }
-                            onClick={() =>
+                            onClick={() => {
                                 setSelectedStatus(
                                     "Semua"
-                                )
-                            }
+                                );
+                                setCurrentPage(1);
+                            }}
                         />
 
                         <FilterButton
@@ -161,11 +170,12 @@ const LamaranList = () => {
                                 selectedStatus ===
                                 "Telah Mendaftar"
                             }
-                            onClick={() =>
+                            onClick={() => {
                                 setSelectedStatus(
                                     "Telah Mendaftar"
-                                )
-                            }
+                                );
+                                setCurrentPage(1);
+                            }}
                         />
 
                         <FilterButton
@@ -174,11 +184,12 @@ const LamaranList = () => {
                                 selectedStatus ===
                                 "Diterima"
                             }
-                            onClick={() =>
+                            onClick={() => {
                                 setSelectedStatus(
                                     "Diterima"
-                                )
-                            }
+                                );
+                                setCurrentPage(1);
+                            }}
                         />
 
                         <FilterButton
@@ -187,11 +198,12 @@ const LamaranList = () => {
                                 selectedStatus ===
                                 "Ditolak"
                             }
-                            onClick={() =>
+                            onClick={() => {
                                 setSelectedStatus(
                                     "Ditolak"
-                                )
-                            }
+                                );
+                                setCurrentPage(1);
+                            }}
                         />
 
                         <FilterButton
@@ -200,11 +212,12 @@ const LamaranList = () => {
                                 selectedStatus ===
                                 "Wawancara"
                             }
-                            onClick={() =>
+                            onClick={() => {
                                 setSelectedStatus(
                                     "Wawancara"
-                                )
-                            }
+                                );
+                                setCurrentPage(1);
+                            }}
                         />
 
                     </div>
@@ -217,9 +230,10 @@ const LamaranList = () => {
                     <SearchBar
                         placeholder="Cari..."
                         value={search}
-                        onChange={(e) =>
-                            setSearch(e.target.value)
-                        }
+                        onChange={(e) => {
+                            setSearch(e.target.value);
+                            setCurrentPage(1);
+                        }}
                     />
 
                 </div>
@@ -232,8 +246,8 @@ const LamaranList = () => {
                 space-y-4
             ">
 
-                {currentApplications.map(
-                    (application, index) => (
+                {currentApplications.length > 0 ? (
+                    currentApplications.map((application, index) => (
 
                         <LamaranListCard
                             key={index}
@@ -258,17 +272,21 @@ const LamaranList = () => {
 
                             to={`/lamaran-detail/${application.id}`}
                         />
-                    )
+                    ))
+                ) : (
+                    <EmptyMessage message={emptyMessage} />
                 )}
 
             </div>
 
             {/* PAGINATION */}
-            <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={setCurrentPage}
-            />
+            {filteredApplications.length > 0 && (
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={setCurrentPage}
+                />
+            )}
 
         </div>
     );

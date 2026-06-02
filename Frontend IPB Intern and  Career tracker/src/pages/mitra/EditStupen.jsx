@@ -279,7 +279,11 @@ const EditStupen = () => {
             setOpenSavePopup(false);
 
             navigate(
-              `/stupen-detail-mitra/${publishedProgramId || id}`
+              `/stupen-detail-mitra/${publishedProgramId || id}`,
+              {
+                replace: true,
+                state: { backTo: "/program-list-mitra" },
+              }
             );
           }}
         />

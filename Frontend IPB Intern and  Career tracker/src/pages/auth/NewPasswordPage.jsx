@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import bgImage from "../../assets/bg-ahn.png";
+import bgImage from "../../assets/bg-illust.png";
 import Logo from "../../components/common/Logo";
 import BackButton from "../../components/ui/BackButton";
 import NewPasswordForm from "../../components/forms/NewPasswordForm";

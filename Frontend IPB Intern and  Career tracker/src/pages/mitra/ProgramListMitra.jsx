@@ -6,6 +6,7 @@ import { showAlert } from "../../services/alertService";
 import SearchBar from "../../components/ui/SearchBar";
 import FilterButton from "../../components/ui/FilterButton";
 import Pagination from "../../components/ui/Pagination";
+import EmptyMessage from "../../components/ui/EmptyMessage";
 import ProgramListCard from "../../components/cards/ProgramListCard";
 import Button from "../../components/ui/Button";
 import PopUpNotif from "../../components/ui/PopUpNotif";
@@ -136,6 +137,13 @@ const ProgramListMitra = () => {
             startIndex + itemsPerPage
         );
 
+    const emptyMessage =
+        programList.length === 0
+            ? "Belum ada program yang dibuat."
+            : selectedCategory !== "Semua"
+                ? `Belum ada program kategori ${selectedCategory}.`
+                : "Program yang dicari belum ditemukan.";
+
     return (
         <div>
             {/* HEADER */}
@@ -209,9 +217,10 @@ const ProgramListMitra = () => {
                         active={
                             selectedCategory === "Semua"
                         }
-                        onClick={() =>
-                            setSelectedCategory("Semua")
-                        }
+                        onClick={() => {
+                            setSelectedCategory("Semua");
+                            setCurrentPage(1);
+                        }}
                     />
 
                     <FilterButton
@@ -219,9 +228,10 @@ const ProgramListMitra = () => {
                         active={
                             selectedCategory === "Magang"
                         }
-                        onClick={() =>
-                            setSelectedCategory("Magang")
-                        }
+                        onClick={() => {
+                            setSelectedCategory("Magang");
+                            setCurrentPage(1);
+                        }}
                     />
 
                     <FilterButton
@@ -229,9 +239,10 @@ const ProgramListMitra = () => {
                         active={
                             selectedCategory === "Kompetisi"
                         }
-                        onClick={() =>
-                            setSelectedCategory("Kompetisi")
-                        }
+                        onClick={() => {
+                            setSelectedCategory("Kompetisi");
+                            setCurrentPage(1);
+                        }}
                     />
 
                     <FilterButton
@@ -240,11 +251,12 @@ const ProgramListMitra = () => {
                             selectedCategory ===
                             "Studi Independen"
                         }
-                        onClick={() =>
+                        onClick={() => {
                             setSelectedCategory(
                                 "Studi Independen"
-                            )
-                        }
+                            );
+                            setCurrentPage(1);
+                        }}
                     />
 
                 </div>
@@ -255,9 +267,10 @@ const ProgramListMitra = () => {
                     <SearchBar
                         placeholder="Cari..."
                         value={search}
-                        onChange={(e) =>
-                            setSearch(e.target.value)
-                        }
+                        onChange={(e) => {
+                            setSearch(e.target.value);
+                            setCurrentPage(1);
+                        }}
                     />
 
                 </div>
@@ -270,8 +283,8 @@ const ProgramListMitra = () => {
                 space-y-5
             ">
 
-                {currentPrograms.map(
-                    (program, index) => (
+                {currentPrograms.length > 0 ? (
+                    currentPrograms.map((program, index) => (
 
                         <ProgramListCard
                             key={index}
@@ -292,7 +305,9 @@ const ProgramListMitra = () => {
                                 handleDeleteClick(program)
                             }
                         />
-                    )
+                    ))
+                ) : (
+                    <EmptyMessage message={emptyMessage} />
                 )}
 
             </div>
@@ -330,11 +345,13 @@ const ProgramListMitra = () => {
             </PopUpNotif>
 
             {/* PAGINATION */}
-            <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                onPageChange={setCurrentPage}
-            />
+            {filteredPrograms.length > 0 && (
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={setCurrentPage}
+                />
+            )}
 
 
         {/* POPUP CREATE PROGRAM */}

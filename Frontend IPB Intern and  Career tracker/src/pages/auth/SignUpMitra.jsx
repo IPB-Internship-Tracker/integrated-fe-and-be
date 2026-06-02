@@ -1,4 +1,4 @@
-import bgImage from "../../assets/bg-ahn.png";
+import bgImage from "../../assets/bg-illust.png";
 import Logo from "../../components/common/Logo";
 import BackButton from "../../components/ui/BackButton";
 import SignUpForm from "../../components/forms/SignUpForm";
@@ -11,10 +11,7 @@ const SignUpMitra = () => {
       style={{
         backgroundImage: `url(${bgImage})`,
       }}
-    >
-      {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-bold-blue via-bold-blue/80 to-bold-blue/40"></div>
-        
+    >        
         <BackButton />
 
       {/* Content */}
@@ -22,7 +19,7 @@ const SignUpMitra = () => {
 
             <div className="flex flex-col items-center gap-8 py-20">
                 <Logo 
-                    logoSize="w-80 md:w-100"
+                    logoSize="w-20 md:w-30"
                     textSize="text-xl md:text-2xl"
                 />
                 <SignUpForm

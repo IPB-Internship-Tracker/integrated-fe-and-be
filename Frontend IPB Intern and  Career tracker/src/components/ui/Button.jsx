@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 const Button = ({
   label = "",
   to,
+  state,
+  replace = false,
   onClick,
   type = "button",
 
@@ -22,7 +24,7 @@ const Button = ({
     }
 
     if (to) {
-      navigate(to);
+      navigate(to, { state, replace });
     }
   };
 
