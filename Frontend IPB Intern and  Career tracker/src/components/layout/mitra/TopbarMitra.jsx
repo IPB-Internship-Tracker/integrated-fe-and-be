@@ -66,28 +66,37 @@ const TopbarMitra = () => {
 
         loadTopbarData();
 
-        const handleProfileImageUpdate = async () => {
+        const handleProfileUpdate = async () => {
             try {
-                const profile = await mitraService.getMe();
+                const profile =
+                    await mitraService.getMe();
+
                 const mappedProfile =
                     mapMitraProfileToUi(profile);
-                if (mappedProfile.fotoProfile) {
-                    setProfileImage(mappedProfile.fotoProfile);
-                }
+
+                setProfileName(
+                    mappedProfile.namaInstansi
+                );
+
+                setProfileImage(
+                    mappedProfile.fotoProfile || null
+                );
+
             } catch {
-                // Ignore silent errors during background update
+                //
             }
         };
 
         window.addEventListener(
-            "mitraProfileImageUpdated",
-            handleProfileImageUpdate
+            "mitraProfileUpdated",
+            handleProfileUpdate
         );
+
         return () =>
             window.removeEventListener(
-                "mitraProfileImageUpdated",
-                handleProfileImageUpdate
-            );
+                "mitraProfileUpdated",
+                handleProfileUpdate
+        );
     }, []);
 
     const hasUnreadNotification = unreadCount > 0;

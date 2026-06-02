@@ -6,7 +6,6 @@ import BackButton from "../../components/ui/BackButton";
 
 import ProfileCard from "../../components/profile/ProfileCard";
 
-import logoShopee from "../../assets/logo-shopee.png";
 import { authService } from "../../services/authService";
 import { mitraService } from "../../services/mitraService";
 import { mapMitraProfileToUi } from "../../services/adapters";
@@ -72,10 +71,7 @@ const ProfileMitra = () => {
                 title="Data Instansi"
                 fields={mitraFields}
                 initialData={mitraData}
-                initialImage={
-                    mitraData.fotoProfile ||
-                    logoShopee
-                }
+                initialImage={mitraData.fotoProfile || null}
                 onSave={async (formData, imageData) => {
                     let nextData = mitraData;
 
@@ -97,11 +93,15 @@ const ProfileMitra = () => {
                         nextData =
                             mapMitraProfileToUi(updatedPhoto);
                         window.dispatchEvent(
-                            new Event("mitraProfileImageUpdated")
+                            new Event("mitraProfileUpdated")
                         );
                     }
 
                     setMitraData(nextData);
+
+                    window.dispatchEvent(
+                        new Event("mitraProfileUpdated")
+                    );
                 }}
             />
 

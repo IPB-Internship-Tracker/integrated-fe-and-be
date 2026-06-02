@@ -172,6 +172,14 @@ const resolveLocalImage = (value) => {
   }
 };
 
+const getCompanyName = (item) =>
+  item?.nama_perusahaan ||
+  item?.nama_instansi ||
+  item?.mitra?.nama_instansi ||
+  item?.mitra?.nama_perusahaan ||
+  item?.mitra?.user?.nama ||
+  "Mitra";
+
 export const mapMahasiswaProfileToUi = (data) => ({
   id: data?.mahasiswa_id || "",
   userId: data?.user_id || data?.user?.user_id || "",
@@ -212,7 +220,7 @@ export const mapKegiatanToCard = (item, logo = fallbackLogo) => ({
   id: item.mbkm_id,
   logo: toApiAssetUrl(item.logo_url || item.poster, logo),
   title: item.nama_kegiatan,
-  company: item.nama_perusahaan || item.nama_instansi || "Mitra",
+  company: getCompanyName(item),
   category: categoryLabel(item.kategori_mbkm),
   location: item.kota_lokasi || item.bidang || "-",
   deadline: formatDateID(item.deadline_pendaftaran),
@@ -229,7 +237,7 @@ export const mapDraftToCard = (draft, logo = fallbackLogo) => {
     id: draft.draft_id,
     logo: toApiAssetUrl(data.logo_url || data.poster, logo),
     title: data.nama_kegiatan || data.judulLamaran || "Draft Program",
-    company: data.nama_perusahaan || "Mitra",
+    company: getCompanyName(data),
     category: categoryLabel(draft.kategori_mbkm),
     program: `Program ${categoryLabel(draft.kategori_mbkm)}`,
     status: "Draft",
@@ -240,7 +248,7 @@ export const mapDraftToCard = (draft, logo = fallbackLogo) => {
 export const mapKegiatanToMagangDetail = (item, logo = fallbackLogo) => ({
   id: item?.mbkm_id,
   title: item?.nama_kegiatan || "",
-  company: item?.nama_perusahaan || "Mitra",
+  company: getCompanyName(item),
   logo: toApiAssetUrl(item?.logo_url, logo),
   role: item?.posisi || "-",
   city: item?.kota_lokasi || "-",
@@ -266,7 +274,7 @@ export const mapKegiatanToProgramDetail = (
 ) => ({
   id: item?.mbkm_id,
   title: item?.nama_kegiatan || "",
-  company: item?.nama_perusahaan || "Mitra",
+  company: getCompanyName(item),
   logo: toApiAssetUrl(item?.logo_url, logo),
   poster: mapProgramPoster(item?.poster, poster),
   deadline: formatDateID(item?.deadline_pendaftaran),
@@ -369,7 +377,7 @@ export const mapLamaranToListItem = (lamaran) => {
     id: lamaran.lamaran_id,
     logo: toApiAssetUrl(kegiatan.logo_url || kegiatan.poster, fallbackLogo),
     title: kegiatan.nama_kegiatan || `Lamaran #${lamaran.lamaran_id}`,
-    company: kegiatan.nama_perusahaan || "Mitra",
+    company: getCompanyName(kegiatan),
     category: categoryLabel(kegiatan.kategori_mbkm),
     appliedDate: formatDateID(lamaran.tanggal_daftar),
     updatedDate: formatDateID(lamaran.tanggal_daftar),

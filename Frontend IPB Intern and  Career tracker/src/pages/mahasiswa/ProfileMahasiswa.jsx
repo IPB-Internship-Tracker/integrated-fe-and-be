@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { showAlert } from "../../services/alertService";
+import { showAlert, } from "../../services/alertService";
 
 import BackButton from "../../components/ui/BackButton";
 import Button from "../../components/ui/Button";
 
 import ProfileCard from "../../components/profile/ProfileCard";
 
-import fotoMhs from "../../assets/profile-mahasiswa.jpg";
 import { authService } from "../../services/authService";
 import { mahasiswaService } from "../../services/mahasiswaService";
 import {
@@ -116,10 +115,7 @@ const ProfileMhs = () => {
                 title="Data Pribadi"
                 fields={mahasiswaFields}
                 initialData={mahasiswaData}
-                initialImage={
-                    mahasiswaData.fotoProfile ||
-                    fotoMhs
-                }
+                initialImage={mahasiswaData.fotoProfile || null}
                 onSave={async (formData, imageData) => {
                     const changedFields =
                         getChangedFields(formData, mahasiswaData);
@@ -188,6 +184,9 @@ const ProfileMhs = () => {
                     }
 
                     setMahasiswaData(nextData);
+                    window.dispatchEvent(
+                        new Event("profileUpdated")
+                    );
 
                     if (immutableFields.length > 0) {
                         return {

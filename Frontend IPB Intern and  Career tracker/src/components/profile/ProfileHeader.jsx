@@ -1,5 +1,6 @@
 import {
     Pencil,
+    CircleUser,
 } from "lucide-react";
 
 const ProfileHeader = ({
@@ -20,18 +21,51 @@ const ProfileHeader = ({
             {/* IMAGE */}
             <div className="relative">
 
-                <img
-                    src={image}
-                    alt={name}
-                    className="
-                        w-24
-                        h-24
-                        rounded-full
-                        object-cover
-                        border-4
-                        border-kuning-tua
-                    "
-                />
+            {
+                image ? (
+
+                    <img
+                        src={image}
+                        alt={name}
+                        className="
+                            w-24
+                            h-24
+                            rounded-full
+                            object-cover
+                            border-4
+                            border-kuning-tua
+                        "
+                    />
+
+                ) : (
+
+                    <div
+                        className="
+                            w-24
+                            h-24
+
+                            rounded-full
+
+                            border-4
+                            border-kuning-tua
+
+                            flex
+                            items-center
+                            justify-center
+
+                            bg-white
+                        "
+                    >
+
+                        <CircleUser
+                            size={56}
+                            className="text-bold-blue"
+                        />
+
+                    </div>
+
+                )
+            }
 
                 {/* INPUT FILE */}
                 <input

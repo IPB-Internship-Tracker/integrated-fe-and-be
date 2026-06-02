@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Button from "../../components/ui/Button";  
 import { kegiatanService } from "../../services/kegiatanService";
+import { attachMitraCompany } from "../../services/kegiatanCompanyService";
 import { mapKegiatanToProgramDetail } from "../../services/adapters";
 import { showAlert } from "../../services/alertService";
 
@@ -41,8 +42,9 @@ useEffect(() => {
   const loadDetail = async () => {
     try {
       const data = await kegiatanService.detail(id);
+      const detailWithCompany = await attachMitraCompany(data);
       setProgramDetail(
-        mapKegiatanToProgramDetail(data, logoShopee, Poster)
+        mapKegiatanToProgramDetail(detailWithCompany, logoShopee, Poster)
       );
     } catch (error) {
       showAlert(error.message);

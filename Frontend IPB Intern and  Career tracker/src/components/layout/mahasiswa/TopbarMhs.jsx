@@ -77,20 +77,37 @@ const TopbarMhs = () => {
 
         loadTopbarData();
 
-        const handleProfileImageUpdate = async () => {
+        const handleProfileUpdate = async () => {
             try {
-                const profile = await mahasiswaService.getMe();
-                const mappedProfile = mapMahasiswaProfileToUi(profile);
-                if (mappedProfile.fotoProfile) {
-                    setProfileImage(mappedProfile.fotoProfile);
-                }
+                const profile =
+                    await mahasiswaService.getMe();
+
+                const mappedProfile =
+                    mapMahasiswaProfileToUi(profile);
+
+                setProfileName(
+                    mappedProfile.nama
+                );
+
+                setProfileImage(
+                    mappedProfile.fotoProfile || null
+                );
+
             } catch {
-                // Ignore silent errors during background update
+                //
             }
         };
 
-        window.addEventListener("profileImageUpdated", handleProfileImageUpdate);
-        return () => window.removeEventListener("profileImageUpdated", handleProfileImageUpdate);
+        window.addEventListener(
+            "profileUpdated",
+            handleProfileUpdate
+        );
+
+        return () =>
+            window.removeEventListener(
+                "profileUpdated",
+                handleProfileUpdate
+            );
     }, []);
 
     const hasUnreadNotification = unreadCount > 0;

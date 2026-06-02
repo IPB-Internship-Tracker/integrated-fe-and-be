@@ -21,6 +21,7 @@ import ProgramStatus from "../../components/ui/ProgramStatus";
 
 import LogoShopee from "../../assets/logo-shopee.png";
 import { kegiatanService } from "../../services/kegiatanService";
+import { attachMitraCompany } from "../../services/kegiatanCompanyService";
 import { mapKegiatanToMagangDetail } from "../../services/adapters";
 
 const InfoCard = ({
@@ -93,8 +94,9 @@ const MagangDetailMitra = () => {
     const loadDetail = async () => {
       try {
         const data = await kegiatanService.detail(id);
+        const detailWithCompany = await attachMitraCompany(data);
         setProgramDetail(
-          mapKegiatanToMagangDetail(data, LogoShopee)
+          mapKegiatanToMagangDetail(detailWithCompany, LogoShopee)
         );
       } catch (error) {
         showAlert(error.message);

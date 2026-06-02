@@ -16,6 +16,7 @@ import ProgramStatus from "../../components/ui/ProgramStatus"
 import LogoShopee from "../../assets/logo-shopee.png";
 import MagangSection from "../../components/cards/MagangSection";
 import { kegiatanService } from "../../services/kegiatanService";
+import { attachMitraCompany } from "../../services/kegiatanCompanyService";
 import {
   mapKegiatanToCard,
   mapKegiatanToMagangDetail,
@@ -98,8 +99,9 @@ const { id } = useParams();
             kegiatanService.detail(id),
             kegiatanService.list({ kategori: "magang" }),
           ]);
+        const detailWithCompany = await attachMitraCompany(data);
         setProgramDetail(
-          mapKegiatanToMagangDetail(data, LogoShopee)
+          mapKegiatanToMagangDetail(detailWithCompany, LogoShopee)
         );
         setRecommendedPrograms(
           recommendations

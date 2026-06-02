@@ -5,6 +5,7 @@ import Button from "../../components/ui/Button";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { kegiatanService } from "../../services/kegiatanService";
+import { attachMitraCompany } from "../../services/kegiatanCompanyService";
 import { mapKegiatanToProgramDetail } from "../../services/adapters";
 import { showAlert } from "../../services/alertService";
 
@@ -43,8 +44,9 @@ const StupenDetail = () => {
     const loadDetail = async () => {
       try {
         const data = await kegiatanService.detail(id);
+        const detailWithCompany = await attachMitraCompany(data);
         setProgramDetail(
-          mapKegiatanToProgramDetail(data, LogoShopee, Poster)
+          mapKegiatanToProgramDetail(detailWithCompany, LogoShopee, Poster)
         );
       } catch (error) {
         showAlert(error.message);

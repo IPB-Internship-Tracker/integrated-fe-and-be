@@ -11,6 +11,7 @@ import LogoShopee from "../../assets/logo-shopee.png";
 import PopUpNotif from "../../components/ui/PopUpNotif";
 import PersonalInfoItem from "../../components/ui/PersonalInfoItem";
 import { kegiatanService } from "../../services/kegiatanService";
+import { attachMitraCompany } from "../../services/kegiatanCompanyService";
 import { lamaranService } from "../../services/lamaranService";
 import { mahasiswaService } from "../../services/mahasiswaService";
 import {
@@ -106,8 +107,10 @@ const FormPendaftaran = () => {
                         kegiatanService.detail(id),
                         mahasiswaService.getMe(),
                     ]);
+                const kegiatanWithCompany =
+                    await attachMitraCompany(kegiatan);
                 const card =
-                    mapKegiatanToCard(kegiatan, LogoShopee);
+                    mapKegiatanToCard(kegiatanWithCompany, LogoShopee);
                 setProgramDetail({
                     title: card.title,
                     company: card.company,
@@ -133,8 +136,8 @@ const FormPendaftaran = () => {
                 });
 
                 const requiredDocs =
-                    kegiatan.dokumen_dibutuhkan?.length
-                        ? kegiatan.dokumen_dibutuhkan
+                    kegiatanWithCompany.dokumen_dibutuhkan?.length
+                        ? kegiatanWithCompany.dokumen_dibutuhkan
                         : ["Curriculum Vitae (CV)"];
                 setDocuments(
                     requiredDocs.map((doc) => ({
