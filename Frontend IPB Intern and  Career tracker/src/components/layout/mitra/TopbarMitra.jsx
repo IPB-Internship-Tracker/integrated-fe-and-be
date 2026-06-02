@@ -8,7 +8,6 @@ import {
     CircleX,
     CircleUser,
 } from "lucide-react";
-import logoShopee from "../../../assets/logo-shopee.png";
 import { authService } from "../../../services/authService";
 import { mitraService } from "../../../services/mitraService";
 import { notifikasiService } from "../../../services/notifikasiService";
@@ -157,11 +156,19 @@ const TopbarMitra = () => {
 
                     {showNotification && (
                         <div className="
-                            absolute
-                            top-12
-                            right-0
+                            fixed
+                            top-16
+                            left-4
+                            right-4
                             z-50
-                            w-[360px]
+                            w-auto
+                            max-w-none
+                            md:absolute
+                            md:top-12
+                            md:left-auto
+                            md:right-0
+                            md:w-[360px]
+                            md:max-w-[calc(100vw-2rem)]
                             bg-white
                             rounded-2xl
                             shadow-2xl
@@ -195,7 +202,8 @@ const TopbarMitra = () => {
                             </div>
 
                             <div className="
-                                max-h-[350px]
+                                max-h-[calc(100vh-11rem)]
+                                md:max-h-[350px]
                                 overflow-y-auto
                             ">
                                 {notifications.length === 0 && (
@@ -401,6 +409,8 @@ const TopbarMitra = () => {
                         
                         {/* NAME */}
                         <span className="
+                            hidden
+                            md:inline
                             text-sm
                             font-regular
                             text-gray-800
@@ -412,6 +422,8 @@ const TopbarMitra = () => {
                         <ChevronDown
                             size={18}
                             className={`
+                                hidden
+                                md:block
                                 text-gray-600
                                 transition-transform
                                 duration-300

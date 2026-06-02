@@ -19,9 +19,9 @@ const LoginMhs = () => {
 
       {/* Content */}
         <div className="relative z-10 text-center text-white px-2 md:px-6 items-center">
-            <div className="flex flex-col items-center gap-8">
+            <div className="flex flex-col items-center gap-4">
                 <Logo 
-                    logoSize="w-20 md:w-30"
+                    logoSize="w-20 md:w-25"
                     textSize="text-xl md:text-2xl"
                 />
                 <LoginForm

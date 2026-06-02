@@ -18,9 +18,9 @@ const LoginMitra = () => {
 
       {/* Content */}
         <div className="relative z-10 text-center text-white px-2 md:px-6 items-center sm:mt-10">
-            <div className="flex flex-col items-center gap-10">
+            <div className="flex flex-col items-center gap-4">
                 <Logo 
-                    logoSize="w-20 md:w-30"
+                    logoSize="w-20 md:w-25"
                     textSize="text-xl md:text-2xl"
                 />
                 <LoginForm

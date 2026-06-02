@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import bgImage from "../../assets/bg-illust.png";
+import bgDesktop from "../../assets/bg-illust.png";
+import bgMobile from "../../assets/bg-illust-mob.png";
 import Logo from "../../components/common/Logo";
 import Button from "../../components/ui/Button";
 
@@ -7,12 +8,33 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="min-h-screen bg-cover bg-center relative flex items-center justify-center"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
-    >
+    <div className="min-h-screen bg-cover bg-center relative flex items-center justify-center">
+      <img
+        src={bgMobile}
+        alt=""
+        className="
+          absolute
+          inset-0
+          w-full
+          h-full
+          object-cover
+          md:hidden
+        "
+      />
+
+      <img
+        src={bgDesktop}
+        alt=""
+        className="
+          absolute
+          inset-0
+          w-full
+          h-full
+          object-cover
+          hidden
+          md:block
+        "
+      />
       {/* OVERLAY     
         <div className="absolute inset-0 bg-gradient-to-b from-bold-blue via-bold-blue/80 to-bold-blue/40"></div>
       */}

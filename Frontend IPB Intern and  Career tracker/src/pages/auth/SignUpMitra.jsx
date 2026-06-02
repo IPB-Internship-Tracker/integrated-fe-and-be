@@ -17,9 +17,9 @@ const SignUpMitra = () => {
       {/* Content */}
         <div className="relative z-10 text-center text-white px-6 items-center">
 
-            <div className="flex flex-col items-center gap-8 py-20">
+            <div className="flex flex-col items-center gap-4 py-20">
                 <Logo 
-                    logoSize="w-20 md:w-30"
+                    logoSize="w-20 md:w-25"
                     textSize="text-xl md:text-2xl"
                 />
                 <SignUpForm

@@ -185,20 +185,23 @@ const TopbarMhs = () => {
                     {showNotification && (
 
                     <div className="
-                        absolute
-                        top-12
-                        right-0
-                        max-md:right-[-60px]
+                        fixed
+                        top-16
+                        left-4
+                        right-4
 
+                        md:absolute
+                        md:top-12
+                        md:left-auto
                         md:right-0
 
                         z-50
 
-                        w-[280px]
-                        sm:w-[320px]
+                        w-auto
+                        max-w-none
                         md:w-[360px]
 
-                        max-w-[calc(100vw-2rem)]
+                        md:max-w-[calc(100vw-2rem)]
 
                         bg-white
                         rounded-2xl
@@ -243,7 +246,8 @@ const TopbarMhs = () => {
 
                             {/* NOTIFICATION LIST */}
                             <div className="
-                                max-h-[350px]
+                                max-h-[calc(100vh-11rem)]
+                                md:max-h-[350px]
                                 overflow-y-auto
                             ">
 
@@ -507,6 +511,8 @@ const TopbarMhs = () => {
 
                         {/* NAME */}
                         <span className="
+                            hidden
+                            md:inline
                             text-sm
                             font-medium
                             text-gray-800
@@ -517,7 +523,11 @@ const TopbarMhs = () => {
                         {/* ICON */}
                         <ChevronDown
                             size={18}
-                            className="text-gray-600"
+                            className="
+                                hidden
+                                md:block
+                                text-gray-600
+                            "
                         />
 
                     </div>
