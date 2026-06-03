@@ -84,6 +84,7 @@ const { id } = useParams();
     description: "",
     documents: [],
     status: "Registrasi Dibuka",
+    isRegistrationClosed: false,
   };
 
   const [programDetail, setProgramDetail] =
@@ -138,11 +139,13 @@ const { id } = useParams();
             </h1>
 
             {/* BUTTON */}
-            <Button
-                label="Daftar"
-                className="w-[180px]"
-                to={`/formpendaftaran/${id}`}
-            />
+            {!programDetail.isRegistrationClosed && (
+              <Button
+                  label="Daftar"
+                  className="w-[180px]"
+                  to={`/formpendaftaran/${id}`}
+              />
+            )}
         </div>
       
 

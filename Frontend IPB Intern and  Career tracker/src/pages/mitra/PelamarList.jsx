@@ -291,17 +291,6 @@ const PelamarList = () => {
 
         {/* FILTER STATUS */}
         <div className="mt-6">
-          <h2
-            className="
-              text-lg
-              font-semibold
-              text-bold-blue
-              mb-4
-            "
-          >
-            Filter status lamaran
-          </h2>
-
           <div
             className="
               flex

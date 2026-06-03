@@ -191,6 +191,10 @@ const LogbookDetail = ({ readOnly = false }) => {
           ),
           mbkmId: lamaran.mbkm_id || lamaran.kegiatan?.mbkm_id || "",
         });
+        setPelamarInfo({
+          nama: lamaran.mahasiswa?.nama || "-",
+          email: lamaran.mahasiswa?.email || "-",
+        });
         await loadLogbooks();
       } catch (error) {
         showAlert(error.message);
@@ -294,6 +298,10 @@ const LogbookDetail = ({ readOnly = false }) => {
 
   const [errors, setErrors] = useState({});
 
+  const [pelamarInfo, setPelamarInfo] = useState({
+    nama: "",
+    email: "",
+  });
   return (
 
     <div className="px-3 space-y-8">
@@ -312,13 +320,34 @@ const LogbookDetail = ({ readOnly = false }) => {
             Log Aktivitas
           </h1>
 
-          <h2 className="text-2xl font-bold text-bold-blue">
-            {programDetail.title}
-          </h2>
+          {readOnly ? (
+            <>
+              <h2 className="text-2xl font-bold text-bold-blue">
+                {pelamarInfo.nama}
+              </h2>
 
-          <p className="text-md text-bold-blue">
-            {programDetail.company}
-          </p>
+              <p className="text-md text-bold-blue mb-3">
+                {pelamarInfo.email}
+              </p>
+
+              <p className="text-md">
+                Program:
+                <span className="font-bold ml-1">
+                  {programDetail.title}
+                </span>
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 className="text-2xl font-bold text-bold-blue">
+                {programDetail.title}
+              </h2>
+
+              <p className="text-md text-bold-blue">
+                {programDetail.company}
+              </p>
+            </>
+          )}
 
           <p className="mt-2 text-md">
             Periode:
@@ -343,7 +372,11 @@ const LogbookDetail = ({ readOnly = false }) => {
       <Table
         columns={columns}
         data={data}
-        emptyMessage="Belum ada log aktivitas. Klik tombol 'Tambah Log' untuk menambahkan aktivitas pertama Anda."
+        emptyMessage={
+          readOnly
+            ? "Belum ada log aktivitas dari mahasiswa."
+            : "Belum ada log aktivitas. Klik tombol 'Tambah Log' untuk menambahkan aktivitas pertama Anda."
+        }
       />
 
       {/* POPUP */}

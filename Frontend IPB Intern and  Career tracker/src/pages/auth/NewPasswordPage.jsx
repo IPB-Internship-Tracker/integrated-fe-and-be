@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
-import bgImage from "../../assets/bg-illust.png";
+import bgDesktop from "../../assets/bg-illust.png";
+import bgMobile from "../../assets/bg-illust-mob.png";
 import Logo from "../../components/common/Logo";
 import BackButton from "../../components/ui/BackButton";
 import NewPasswordForm from "../../components/forms/NewPasswordForm";
@@ -11,22 +12,42 @@ const NewPasswordPage = () => {
   const loginPath = location.state?.loginPath || "/login-mahasiswa";
 
   return (
-    <div
-      className="min-h-screen bg-cover bg-center relative flex items-center justify-center"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-b from-bold-blue via-bold-blue/80 to-bold-blue/40"></div>
+  <div className="min-h-screen bg-cover bg-center relative flex items-center justify-center">
+        <img
+          src={bgMobile}
+          alt=""
+          className="
+            absolute
+            inset-0
+            w-full
+            h-full
+            object-cover
+            md:hidden
+          "
+        />
+
+        <img
+          src={bgDesktop}
+          alt=""
+          className="
+            absolute
+            inset-0
+            w-full
+            h-full
+            object-cover
+            hidden
+            md:block
+          "
+        />
 
       <BackButton />
 
       <div className="relative z-10 text-center text-white px-6 items-center">
         <div className="flex flex-col items-center gap-8">
-          <Logo
-            logoSize="w-100"
-            textSize="text-2xl"
-          />
+                <Logo 
+                    logoSize="w-20 md:w-25"
+                    textSize="text-xl md:text-2xl"
+                />>
 
           <NewPasswordForm
             token={token}

@@ -43,6 +43,26 @@ export const formatDateID = (dateValue) => {
   return `${date.getDate()} ${MONTHS_ID[date.getMonth()]} ${date.getFullYear()}`;
 };
 
+export const isRegistrationClosed = (deadlineValue, status) => {
+  if (status === "Registrasi Ditutup") return true;
+  if (!deadlineValue) return false;
+
+  const deadline = new Date(`${deadlineValue}T23:59:59`);
+  if (Number.isNaN(deadline.getTime())) return false;
+
+  return deadline < new Date();
+};
+
+const registrationDeadlineLabel = (deadlineValue, status) =>
+  isRegistrationClosed(deadlineValue, status)
+    ? "Pendaftaran ditutup"
+    : formatDateID(deadlineValue);
+
+const registrationStatus = (deadlineValue, status) =>
+  isRegistrationClosed(deadlineValue, status)
+    ? "Registrasi Ditutup"
+    : status || "Registrasi Dibuka";
+
 export const formatPeriod = (start, end) => {
   if (!start && !end) return "-";
   return `${formatDateID(start)} - ${formatDateID(end)}`;
@@ -223,9 +243,13 @@ export const mapKegiatanToCard = (item, logo = fallbackLogo) => ({
   company: getCompanyName(item),
   category: categoryLabel(item.kategori_mbkm),
   location: item.kota_lokasi || item.bidang || "-",
-  deadline: formatDateID(item.deadline_pendaftaran),
+  deadline: registrationDeadlineLabel(item.deadline_pendaftaran, item.status),
   period: formatPeriod(item.tanggal_mulai, item.tanggal_selesai),
-  status: item.status || "Registrasi Dibuka",
+  status: registrationStatus(item.deadline_pendaftaran, item.status),
+  isRegistrationClosed: isRegistrationClosed(
+    item.deadline_pendaftaran,
+    item.status
+  ),
   participantInfo:
     item.kategori_mbkm === "magang" ? "Total Pendaftar: - Orang" : "",
   raw: item,
@@ -252,7 +276,7 @@ export const mapKegiatanToMagangDetail = (item, logo = fallbackLogo) => ({
   logo: toApiAssetUrl(item?.logo_url, logo),
   role: item?.posisi || "-",
   city: item?.kota_lokasi || "-",
-  deadline: formatDateID(item?.deadline_pendaftaran),
+  deadline: registrationDeadlineLabel(item?.deadline_pendaftaran, item?.status),
   timeline: formatPeriod(item?.tanggal_mulai, item?.tanggal_selesai),
   quota: item?.kuota || 0,
   salary: item?.gaji_perbulan || 0,
@@ -264,7 +288,11 @@ export const mapKegiatanToMagangDetail = (item, logo = fallbackLogo) => ({
   documents: item?.dokumen_dibutuhkan?.length
     ? item.dokumen_dibutuhkan
     : DOKUMEN_DEFAULT,
-  status: item?.status || "Registrasi Dibuka",
+  status: registrationStatus(item?.deadline_pendaftaran, item?.status),
+  isRegistrationClosed: isRegistrationClosed(
+    item?.deadline_pendaftaran,
+    item?.status
+  ),
 });
 
 export const mapKegiatanToProgramDetail = (
@@ -277,11 +305,15 @@ export const mapKegiatanToProgramDetail = (
   company: getCompanyName(item),
   logo: toApiAssetUrl(item?.logo_url, logo),
   poster: mapProgramPoster(item?.poster, poster),
-  deadline: formatDateID(item?.deadline_pendaftaran),
+  deadline: registrationDeadlineLabel(item?.deadline_pendaftaran, item?.status),
   timeline: formatPeriod(item?.tanggal_mulai, item?.tanggal_selesai),
   link: getRegistrationLink(item),
   description: stripRegistrationLink(item?.deskripsi) || "-",
-  status: item?.status || "Registrasi Dibuka",
+  status: registrationStatus(item?.deadline_pendaftaran, item?.status),
+  isRegistrationClosed: isRegistrationClosed(
+    item?.deadline_pendaftaran,
+    item?.status
+  ),
 });
 
 export const mapMagangFormToPayload = (formData, selectedDocs = []) => ({

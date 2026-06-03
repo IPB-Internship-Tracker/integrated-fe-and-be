@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
     Bell,
@@ -17,8 +17,10 @@ import {
 } from "../../../services/adapters";
 import { showAlert } from "../../../services/alertService";
 
-const TopbarMitra = () => {
 
+const TopbarMitra = () => {
+    const dropdownRef = useRef(null);
+    const notificationRef = useRef(null);
     const [showDropdown, setShowDropdown] =
         useState(false);
     const [showNotification, setShowNotification] =
@@ -86,6 +88,35 @@ const TopbarMitra = () => {
             }
         };
 
+        const handleClickOutside = (event) => {
+
+        if (
+            dropdownRef.current &&
+            !dropdownRef.current.contains(event.target)
+        ) {
+            setShowDropdown(false);
+        }
+
+        if (
+            notificationRef.current &&
+            !notificationRef.current.contains(event.target)
+        ) {
+            setShowNotification(false);
+        }
+        };
+
+        document.addEventListener(
+            "mousedown",
+            handleClickOutside
+        );
+
+        return () => {
+            document.removeEventListener(
+                "mousedown",
+                handleClickOutside
+            );
+        };
+
         window.addEventListener(
             "mitraProfileUpdated",
             handleProfileUpdate
@@ -121,7 +152,7 @@ const TopbarMitra = () => {
             ">
 
                 {/* NOTIFICATION */}
-                <div className="relative">
+                <div className="relative" ref={notificationRef}>
                     <button
                         onClick={() =>
                             setShowNotification(
@@ -358,7 +389,7 @@ const TopbarMitra = () => {
                 </div>
 
                 {/* PROFILE WRAPPER */}
-                <div className="relative">
+                <div className="relative" ref={dropdownRef}>
                     {/* PROFILE */}
                     <div
                         onClick={() =>

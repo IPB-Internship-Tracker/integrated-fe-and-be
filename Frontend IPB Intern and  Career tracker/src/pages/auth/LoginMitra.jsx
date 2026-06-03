@@ -1,5 +1,5 @@
-import bgImage from "../../assets/bg-illust.png";
-import Logo from "../../components/common/Logo";
+import bgDesktop from "../../assets/bg-illust.png";
+import bgMobile from "../../assets/bg-illust-mob.png";import Logo from "../../components/common/Logo";
 import LoginForm from "../../components/forms/LoginForm";
 import BackButton from "../../components/ui/BackButton";
 
@@ -8,12 +8,33 @@ const emailPlaceholder = "Masukkan email perusahaan Anda";
 
 const LoginMitra = () => {
   return (
-    <div
-      className="min-h-screen bg-cover bg-center relative flex items-center justify-center"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
-    >        
+<div className="min-h-screen bg-cover bg-center relative flex items-center justify-center">
+      <img
+        src={bgMobile}
+        alt=""
+        className="
+          absolute
+          inset-0
+          w-full
+          h-full
+          object-cover
+          md:hidden
+        "
+      />
+
+      <img
+        src={bgDesktop}
+        alt=""
+        className="
+          absolute
+          inset-0
+          w-full
+          h-full
+          object-cover
+          hidden
+          md:block
+        "
+      />      
         <BackButton />
 
       {/* Content */}

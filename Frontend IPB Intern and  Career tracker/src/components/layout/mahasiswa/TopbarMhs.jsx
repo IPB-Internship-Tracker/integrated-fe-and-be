@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { showAlert } from "../../../services/alertService";
 
@@ -36,7 +36,8 @@ const TopbarMhs = () => {
         setShowNotification,
     ] = useState(false);
 
-    
+    const dropdownRef = useRef(null);
+    const notificationRef = useRef(null);
     
     const [
     notifications,
@@ -103,6 +104,35 @@ const TopbarMhs = () => {
             handleProfileUpdate
         );
 
+        const handleClickOutside = (event) => {
+
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target)
+            ) {
+                setShowDropdown(false);
+            }
+
+            if (
+                notificationRef.current &&
+                !notificationRef.current.contains(event.target)
+            ) {
+                setShowNotification(false);
+            }
+        };
+
+        document.addEventListener(
+            "mousedown",
+            handleClickOutside
+        );
+
+        return () => {
+            document.removeEventListener(
+                "mousedown",
+                handleClickOutside
+            );
+        };
+
         return () =>
             window.removeEventListener(
                 "profileUpdated",
@@ -135,7 +165,7 @@ const TopbarMhs = () => {
             ">
 
                 {/* NOTIFICATION */}
-                <div className="relative">
+                <div className="relative" ref={notificationRef}>
 
                     {/* NOTIFICATION BUTTON */}
                     <button
@@ -455,7 +485,7 @@ const TopbarMhs = () => {
                 </div>
 
                 {/* PROFILE WRAPPER */}
-                <div className="relative">
+                <div className="relative" ref={dropdownRef}>
 
                     {/* PROFILE */}
                     <div

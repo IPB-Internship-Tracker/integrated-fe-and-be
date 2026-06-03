@@ -4,6 +4,8 @@ import {
 } from "react-router-dom";
 import { CircleAlert } from "lucide-react";
 import Button from "../../components/ui/Button";
+import bgDesktop from "../../assets/bg-illust.png";
+import bgMobile from "../../assets/bg-illust-mob.png";
 
 const normalizeRole = (role) => {
   const value = String(role || "").toLowerCase();

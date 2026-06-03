@@ -163,11 +163,6 @@ const LamaranDetail = () => {
             <div className="space-y-6">
 
               <PersonalInfoItem
-                label="Nomor HP"
-                value={personalData.phone}
-              />
-
-              <PersonalInfoItem
                 label="Semester"
                 value={personalData.semester}
               />

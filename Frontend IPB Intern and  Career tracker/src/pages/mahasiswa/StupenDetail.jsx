@@ -35,6 +35,7 @@ const StupenDetail = () => {
     description:
       "",
     status: "Registrasi Dibuka",
+    isRegistrationClosed: false,
   };
 
   const [programDetail, setProgramDetail] =
@@ -70,7 +71,11 @@ const StupenDetail = () => {
       programDetail={programDetail}
       actionButton={
         <Button
-          label="Daftar"
+          label={
+            programDetail.isRegistrationClosed
+              ? "Selengkapnya"
+              : "Daftar"
+          }
           onClick={handleExternalRegistration}
           className="w-[180px]"
         />

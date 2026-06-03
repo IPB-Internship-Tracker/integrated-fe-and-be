@@ -23,6 +23,7 @@ const KompetisiDetail = () => {
     link: "",
     description: "",
     status: "Registrasi Dibuka",
+    isRegistrationClosed: false,
   };
 
   const [programDetail, setProgramDetail] =
@@ -59,7 +60,11 @@ const KompetisiDetail = () => {
       programDetail={programDetail}
       actionButton={
         <Button
-          label="Daftar"
+          label={
+            programDetail.isRegistrationClosed
+              ? "Selengkapnya"
+              : "Daftar"
+          }
           onClick={handleExternalRegistration}
           className="w-[180px]"
         />

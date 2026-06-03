@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import bgImage from "../../assets/bg-illust.png";
+import bgDesktop from "../../assets/bg-illust.png";
+import bgMobile from "../../assets/bg-illust-mob.png";
 import Logo from "../../components/common/Logo";
 import BackButton from "../../components/ui/BackButton";
 import {
@@ -11,12 +12,33 @@ const SelectRole = () => {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="min-h-screen bg-cover bg-center relative flex items-center justify-center"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
-    >
+<div className="min-h-screen bg-cover bg-center relative flex items-center justify-center">
+      <img
+        src={bgMobile}
+        alt=""
+        className="
+          absolute
+          inset-0
+          w-full
+          h-full
+          object-cover
+          md:hidden
+        "
+      />
+
+      <img
+        src={bgDesktop}
+        alt=""
+        className="
+          absolute
+          inset-0
+          w-full
+          h-full
+          object-cover
+          hidden
+          md:block
+        "
+      />
       
         <BackButton />
 
